@@ -1,0 +1,394 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <ViewManagerAdapter_ExpoLinearGradient
+    proxiedProperties={
+      Object {
+        "colors": Array [
+          4294967295,
+          4278323777,
+        ],
+        "endPoint": undefined,
+        "locations": undefined,
+        "startPoint": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": 950,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+  <Text
+    style={
+      Object {
+        "color": "#ffffff",
+        "fontFamily": "fira-sans",
+        "fontSize": 40,
+        "marginBottom": 30,
+      }
+    }
+  >
+    COMING SOON!
+  </Text>
+  <View>
+    <View
+      accessible={true}
+      focusable={true}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "justifyContent": "center",
+                  "marginHorizontal": 2,
+                },
+                Object {
+                  "height": 78,
+                  "width": 69,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontVariant": Array [
+                      "tabular-nums",
+                    ],
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "fontSize": 30,
+                  },
+                  Object {
+                    "color": "#020a41",
+                    "fontFamily": "fira-sans",
+                  },
+                ]
+              }
+            >
+              34
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "white",
+                "marginVertical": 2,
+              },
+              Object {
+                "fontSize": 16.666666666666668,
+              },
+              Object {
+                "color": "#ffffff",
+                "fontFamily": "fira-sans",
+              },
+            ]
+          }
+        >
+          Days
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "justifyContent": "center",
+                  "marginHorizontal": 2,
+                },
+                Object {
+                  "height": 78,
+                  "width": 69,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontVariant": Array [
+                      "tabular-nums",
+                    ],
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "fontSize": 30,
+                  },
+                  Object {
+                    "color": "#020a41",
+                    "fontFamily": "fira-sans",
+                  },
+                ]
+              }
+            >
+              17
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "white",
+                "marginVertical": 2,
+              },
+              Object {
+                "fontSize": 16.666666666666668,
+              },
+              Object {
+                "color": "#ffffff",
+                "fontFamily": "fira-sans",
+              },
+            ]
+          }
+        >
+          Hours
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "justifyContent": "center",
+                  "marginHorizontal": 2,
+                },
+                Object {
+                  "height": 78,
+                  "width": 69,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontVariant": Array [
+                      "tabular-nums",
+                    ],
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "fontSize": 30,
+                  },
+                  Object {
+                    "color": "#020a41",
+                    "fontFamily": "fira-sans",
+                  },
+                ]
+              }
+            >
+              20
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "white",
+                "marginVertical": 2,
+              },
+              Object {
+                "fontSize": 16.666666666666668,
+              },
+              Object {
+                "color": "#ffffff",
+                "fontFamily": "fira-sans",
+              },
+            ]
+          }
+        >
+          Mins
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "borderRadius": 5,
+                  "justifyContent": "center",
+                  "marginHorizontal": 2,
+                },
+                Object {
+                  "height": 78,
+                  "width": 69,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Object {
+                    "color": "white",
+                    "fontVariant": Array [
+                      "tabular-nums",
+                    ],
+                    "fontWeight": "bold",
+                  },
+                  Object {
+                    "fontSize": 30,
+                  },
+                  Object {
+                    "color": "#020a41",
+                    "fontFamily": "fira-sans",
+                  },
+                ]
+              }
+            >
+              00
+            </Text>
+          </View>
+        </View>
+        <Text
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "color": "white",
+                "marginVertical": 2,
+              },
+              Object {
+                "fontSize": 16.666666666666668,
+              },
+              Object {
+                "color": "#ffffff",
+                "fontFamily": "fira-sans",
+              },
+            ]
+          }
+        >
+          Secs
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

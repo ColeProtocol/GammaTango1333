@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BattalionButton renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ffffff",
+        "borderRadius": 15,
+        "elevation": 5,
+        "height": 85,
+        "justifyContent": "center",
+        "opacity": 1,
+        "padding": 1,
+        "shadowColor": "#a0a0a0",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 0,
+        },
+        "shadowOpacity": 0.4,
+        "shadowRadius": 8,
+        "width": 85,
+      }
+    }
+  >
+    <Image
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    />
+  </View>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#333333",
+          "paddingTop": 8,
+          "textAlign": "center",
+        },
+        Object {
+          "fontFamily": "andale-mono",
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`BattalionButton renders correctly with an image 1`] = `ShallowWrapper {}`;

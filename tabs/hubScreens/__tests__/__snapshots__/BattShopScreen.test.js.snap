@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginTop": 20,
+        "width": "90%",
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          undefined,
+          Object {
+            "borderBottomWidth": 1,
+            "borderColor": "#efefef",
+            "borderLeftWidth": 1,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            0,
+            Object {
+              "width": 690,
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              undefined,
+              Object {
+                "width": 690,
+              },
+              Object {
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#efefef",
+                  "borderRightWidth": 1,
+                  "borderTopWidth": 1,
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "width": 202.5,
+                },
+                undefined,
+                undefined,
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "margin": 6,
+                    },
+                    Object {
+                      "fontFamily": "andale-mono",
+                    },
+                  ],
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ]
+              }
+            >
+              Shop #:
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#efefef",
+                  "borderRightWidth": 1,
+                  "borderTopWidth": 1,
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "width": 487.5,
+                },
+                undefined,
+                undefined,
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "margin": 6,
+                    },
+                    Object {
+                      "fontFamily": "andale-mono",
+                    },
+                  ],
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ]
+              }
+            >
+              xxx-xxx-xxxx
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              undefined,
+              Object {
+                "width": 690,
+              },
+              Object {
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#efefef",
+                  "borderRightWidth": 1,
+                  "borderTopWidth": 1,
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "width": 202.5,
+                },
+                undefined,
+                undefined,
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "margin": 6,
+                    },
+                    Object {
+                      "fontFamily": "andale-mono",
+                    },
+                  ],
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ]
+              }
+            >
+              Location:
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#efefef",
+                  "borderRightWidth": 1,
+                  "borderTopWidth": 1,
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "width": 487.5,
+                },
+                undefined,
+                undefined,
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "margin": 6,
+                    },
+                    Object {
+                      "fontFamily": "andale-mono",
+                    },
+                  ],
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ]
+              }
+            >
+              Example address which will be dynamically replaced
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Array [
+              undefined,
+              Object {
+                "width": 690,
+              },
+              Object {
+                "flexDirection": "row",
+                "overflow": "hidden",
+              },
+              undefined,
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#efefef",
+                  "borderRightWidth": 1,
+                  "borderTopWidth": 1,
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "width": 202.5,
+                },
+                undefined,
+                undefined,
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "margin": 6,
+                    },
+                    Object {
+                      "fontFamily": "andale-mono",
+                    },
+                  ],
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ]
+              }
+            >
+              Hours:
+            </Text>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "borderColor": "#efefef",
+                  "borderRightWidth": 1,
+                  "borderTopWidth": 1,
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "width": 487.5,
+                },
+                undefined,
+                undefined,
+                false,
+                undefined,
+              ]
+            }
+          >
+            <Text
+              style={
+                Array [
+                  Array [
+                    Object {
+                      "fontSize": 16,
+                      "margin": 6,
+                    },
+                    Object {
+                      "fontFamily": "andale-mono",
+                    },
+                  ],
+                  Object {
+                    "backgroundColor": "transparent",
+                  },
+                ]
+              }
+            >
+              This is the hour schedule
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#020a41",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginVertical": 10,
+          "opacity": 1,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#ffffff",
+              "fontSize": 18,
+              "marginHorizontal": 30,
+              "marginTop": 7,
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        Contact Info/Details
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#020a41",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginVertical": 10,
+          "opacity": 1,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#ffffff",
+              "fontSize": 18,
+              "marginHorizontal": 30,
+              "marginTop": 7,
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        Security Clearance
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#020a41",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginVertical": 10,
+          "opacity": 1,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#ffffff",
+              "fontSize": 18,
+              "marginHorizontal": 30,
+              "marginTop": 7,
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        Regulations
+      </Text>
+    </View>
+    <View
+      accessible={true}
+      focusable={false}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#020a41",
+          "borderRadius": 5,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginVertical": 10,
+          "opacity": 1,
+          "padding": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "color": "#ffffff",
+              "fontSize": 18,
+              "marginHorizontal": 30,
+              "marginTop": 7,
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        Function
+      </Text>
+    </View>
+  </View>
+</View>
+`;

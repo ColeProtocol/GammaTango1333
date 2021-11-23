@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "display": "flex",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 200,
+          "width": 200,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "fontFamily": "fira-sans",
+          "fontSize": 30,
+          "paddingLeft": 25,
+        }
+      }
+    >
+      RAKKASANS
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 40,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      autoCapitalize="none"
+      autoCorrect={false}
+      onChangeText={[Function]}
+      placeholder="Name"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "rgba(0,0,0,0.2)",
+          "borderRadius": 25,
+          "borderWidth": 0.5,
+          "height": 50,
+          "marginHorizontal": 20,
+          "marginVertical": 8,
+          "paddingLeft": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      autoCapitalize="none"
+      autoCorrect={false}
+      onChangeText={[Function]}
+      placeholder="Email"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderColor": "rgba(0,0,0,0.2)",
+          "borderRadius": 25,
+          "borderWidth": 0.5,
+          "height": 50,
+          "marginHorizontal": 20,
+          "marginVertical": 8,
+          "paddingLeft": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <TextInput
+      allowFontScaling={true}
+      autoCapitalize="none"
+      autoCorrect={false}
+      maxLength={15}
+      onChangeText={[Function]}
+      placeholder="Password"
+      rejectResponderTermination={true}
+      secureTextEntry={true}
+      style={
+        Object {
+          "borderColor": "rgba(0,0,0,0.2)",
+          "borderRadius": 25,
+          "borderWidth": 0.5,
+          "height": 50,
+          "marginHorizontal": 20,
+          "marginVertical": 8,
+          "paddingLeft": 10,
+        }
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 35,
+        "height": 60,
+        "justifyContent": "center",
+        "marginHorizontal": 30,
+        "marginTop": 10,
+        "marginVertical": 5,
+        "opacity": 1,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 0.2,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "fira-sans",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      SIGN UP
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 35,
+        "height": 60,
+        "justifyContent": "center",
+        "marginHorizontal": 30,
+        "marginTop": 10,
+        "marginVertical": 5,
+        "opacity": 1,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 2,
+          "width": 2,
+        },
+        "shadowOpacity": 0.2,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontFamily": "fira-sans",
+          "fontSize": 20,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      RETURN TO LOGIN
+    </Text>
+  </View>
+</View>
+`;

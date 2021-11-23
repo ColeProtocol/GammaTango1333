@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`ListItem renders correctly with text 1`] = `ShallowWrapper {}`;

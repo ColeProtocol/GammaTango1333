@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ffffff",
+        "flex": 1,
+        "justifyContent": "center",
+        "marginTop": 40,
+      }
+    }
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": 30,
+          "top": "-3%",
+          "width": 30,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "color": "#020a41",
+          "fontFamily": "andale-mono",
+          "fontSize": 25,
+        }
+      }
+    >
+      Rakkasan Challenge
+    </Text>
+    <View
+      accessible={true}
+      focusable={false}
+      isTVSelectable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "transparent",
+            "borderRadius": 15,
+            "elevation": 5,
+            "padding": 15,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.26,
+            "shadowRadius": 8,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "borderRadius": 10,
+              "height": 357.1428571428571,
+              "width": 625,
+            }
+          }
+        />
+      </View>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "#020a41",
+          "fontFamily": "andale-mono",
+          "fontSize": 22,
+          "marginTop": 25,
+          "padding": 5,
+        }
+      }
+    >
+      Fast Fitness
+    </Text>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <RCTScrollView
+        activeAnimationOptions={null}
+        activeAnimationType="timing"
+        activeSlideAlignment="center"
+        activeSlideOffset={20}
+        apparitionDelay={0}
+        automaticallyAdjustContentInsets={false}
+        autoplay={false}
+        autoplayDelay={1000}
+        autoplayInterval={3000}
+        callbackOffsetMargin={5}
+        containerCustomStyle={Object {}}
+        contentContainerCustomStyle={Object {}}
+        contentContainerStyle={
+          Array [
+            Object {
+              "paddingLeft": 30,
+              "paddingRight": 30,
+            },
+            Object {},
+          ]
+        }
+        data={Array []}
+        decelerationRate="fast"
+        directionalLockEnabled={true}
+        disableVirtualization={false}
+        enableMomentum={false}
+        enableSnap={true}
+        firstItem={1}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        hasParallaxImages={true}
+        horizontal={true}
+        inactiveSlideOpacity={0.7}
+        inactiveSlideScale={0.9}
+        inactiveSlideShift={0}
+        initialNumToRender={7}
+        invertStickyHeaders={false}
+        inverted={false}
+        itemWidth={690}
+        keyExtractor={[Function]}
+        layout="default"
+        lockScrollTimeoutDuration={1000}
+        lockScrollWhileSnapping={false}
+        loop={false}
+        loopClonesPerSide={3}
+        maxToRenderPerBatch={15}
+        numColumns={1}
+        onContentSizeChange={[Function]}
+        onEndReachedThreshold={2}
+        onLayout={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onResponderRelease={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        onTouchEnd={[Function]}
+        onTouchStart={[Function]}
+        overScrollMode="never"
+        pinchGestureEnabled={false}
+        removeClippedSubviews={true}
+        renderItem={[Function]}
+        scrollEnabled={true}
+        scrollEventThrottle={1}
+        scrollsToTop={false}
+        shouldOptimizeUpdates={true}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        slideStyle={Object {}}
+        sliderHeight={750}
+        sliderWidth={750}
+        stickyHeaderIndices={Array []}
+        style={
+          Object {
+            "flexDirection": "row",
+            "opacity": 0,
+            "width": 750,
+          }
+        }
+        swipeThreshold={20}
+        updateCellsBatchingPeriod={50}
+        useScrollView={false}
+        vertical={false}
+        viewabilityConfigCallbackPairs={Array []}
+        windowSize={15}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "space-evenly",
+            "paddingBottom": 55,
+            "width": "85%",
+          },
+          Object {
+            "paddingTop": 10,
+          },
+        ]
+      }
+    >
+      <View
+        accessible={true}
+        focusable={false}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "opacity": 1,
+            "padding": 10,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              Object {
+                "height": 90,
+                "width": 90,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#333333",
+                  "paddingBottom": 6,
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontFamily": "andale-mono",
+                },
+                Object {
+                  "fontSize": 13,
+                },
+              ]
+            }
+          >
+            Nutrition
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 25,
+                "height": 50,
+                "justifyContent": "center",
+                "width": 50,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+      </View>
+      <View
+        accessible={true}
+        focusable={false}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "opacity": 1,
+            "padding": 10,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+              },
+              Object {
+                "height": 90,
+                "width": 90,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#333333",
+                  "paddingBottom": 6,
+                  "textAlign": "center",
+                },
+                Object {
+                  "fontFamily": "andale-mono",
+                },
+                Object {
+                  "fontSize": 14,
+                },
+              ]
+            }
+          >
+            DFAC
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": 25,
+                "height": 50,
+                "justifyContent": "center",
+                "width": 50,
+              }
+            }
+          >
+            <Text />
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

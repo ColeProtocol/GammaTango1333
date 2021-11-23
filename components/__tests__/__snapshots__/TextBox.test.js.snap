@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#efefef",
+      "borderRadius": 5,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginVertical": 10,
+      "padding": 15,
+      "width": "100%",
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "fontSize": 18,
+        },
+        Object {
+          "fontFamily": "andale-mono",
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

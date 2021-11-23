@@ -1,0 +1,601 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+      "justifyContent": "center",
+      "paddingTop": 5,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "paddingBottom": 20,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 70,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        HHC
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 65,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        1-187
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "paddingBottom": 20,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 65,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        2-506
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 65,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        3-387
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "paddingBottom": 20,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 70,
+              "width": 70,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        1-33
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 65,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        3-320th
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "space-evenly",
+        "paddingBottom": 20,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 65,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        21 BEB
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#ffffff",
+            "borderRadius": 15,
+            "elevation": 5,
+            "height": 85,
+            "justifyContent": "center",
+            "opacity": 1,
+            "padding": 1,
+            "shadowColor": "#a0a0a0",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.4,
+            "shadowRadius": 8,
+            "width": 85,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 65,
+              "width": 65,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#333333",
+              "paddingTop": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "fontFamily": "andale-mono",
+            },
+          ]
+        }
+      >
+        626 BSB
+      </Text>
+    </View>
+  </View>
+</View>
+`;

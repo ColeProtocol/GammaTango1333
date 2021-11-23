@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderRadius": 15,
+      "elevation": 5,
+      "opacity": 1,
+      "padding": 10,
+      "shadowColor": "#a0a0a0",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.4,
+      "shadowRadius": 8,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "justifyContent": "center",
+        },
+        Object {
+          "height": undefined,
+          "width": undefined,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#333333",
+            "paddingBottom": 6,
+            "textAlign": "center",
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+          Object {
+            "fontSize": undefined,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 25,
+          "height": 50,
+          "justifyContent": "center",
+          "width": 50,
+        }
+      }
+    >
+      <Text />
+    </View>
+  </View>
+</View>
+`;

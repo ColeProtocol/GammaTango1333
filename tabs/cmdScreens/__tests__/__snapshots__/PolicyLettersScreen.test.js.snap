@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 1
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 2
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 3
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 4
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 5
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 6
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={false}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#020a41",
+        "borderRadius": 5,
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "marginVertical": 10,
+        "opacity": 1,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "color": "#ffffff",
+            "fontSize": 18,
+            "marginHorizontal": 30,
+            "marginTop": 7,
+          },
+          Object {
+            "fontFamily": "andale-mono",
+          },
+        ]
+      }
+    >
+      Policy Letter 7
+    </Text>
+  </View>
+</View>
+`;

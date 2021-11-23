@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "bottom": 0,
+        "justifyContent": "flex-start",
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+      Object {
+        "height": undefined,
+      },
+    ]
+  }
+>
+  <MapView
+    height="80%"
+    region={
+      Object {
+        "latitude": 36.6634,
+        "latitudeDelta": 0.015,
+        "longitude": -87.4774,
+        "longitudeDelta": 0.0121,
+      }
+    }
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  >
+    <Marker
+      coordinate={
+        Object {
+          "latitude": 36.6637,
+          "longitude": -87.4774,
+        }
+      }
+      pinColor="blue"
+      title="Base"
+    />
+  </MapView>
+</View>
+`;
