@@ -141,6 +141,24 @@ export default function HubTab() {
             hubIcon={true}
           />
         </View>
+        <View style={[styles.buttonView, { paddingBottom: 45 }]}>
+          <SquareButton
+            name="Calendar"
+            text="Calendar"
+            buttonSize={75}
+            textSize={10}
+            onPress={() => navigation.navigate("Calendar")}
+            hubIcon={false}
+          />
+          <SquareButton
+            name="Reading"
+            text="Reading List"
+            buttonSize={75}
+            textSize={11}
+            onPress={() => navigation.navigate("RAKFIT")}
+            hubIcon={false}
+          />
+        </View>
         <Button
           containerStyle={{
             marginTop: -20,
@@ -198,7 +216,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.26,
-    top: 8,
+    top: 10,
     height: 200,
     width: "90%",
     alignItems: "flex-end",
