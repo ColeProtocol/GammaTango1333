@@ -35,6 +35,7 @@ import InProcessing from "./tabs/hubScreens/InProcessing";
 import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
 import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
+import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 
 // battalion screens
 import BattUnitScreen from "./tabs/hubScreens/BattUnitScreen";
@@ -164,6 +165,15 @@ function HubStackScreen({ navigation }) {
           CalendarScreen
         }
       />
+
+      <HubStack.Screen
+        name="Reading List"
+        component={
+          // RakFitScreen
+          ReadingListScreen
+        }
+      />
+
       <HubStack.Screen name="Request a Feature" component={NewRequest} />
 
       <HubStack.Screen name="Battalion" component={BattUnitScreen} />

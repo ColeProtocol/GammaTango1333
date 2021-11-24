@@ -34,21 +34,21 @@ export default function HubTab() {
   const [id, setID] = useState();
 
   getBluebook();
-  
+
   useEffect(() => {
     const getData = async () => {
       const val = await AsyncStorage.getItem("@user_data").catch(console.log);
       const json = JSON.parse(val);
-  
+
       setUsername(json.user.username);
       setEmail(json.user.email);
       setID(json.user.id);
-  
+
       Firebase.app().firestore().collection('users').doc(email).get().then((docSnapshot) => {
         setPicture(docSnapshot.get('picture'));
       });
     };
-  
+
     getData();
   });
 
@@ -155,7 +155,7 @@ export default function HubTab() {
             text="Reading List"
             buttonSize={75}
             textSize={11}
-            onPress={() => navigation.navigate("RAKFIT")}
+            onPress={() => navigation.navigate("Reading List")}
             hubIcon={false}
           />
         </View>
