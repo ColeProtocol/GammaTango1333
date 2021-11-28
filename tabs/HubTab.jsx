@@ -156,7 +156,7 @@ export default function HubTab() {
             buttonSize={75}
             textSize={11}
             onPress={() => navigation.navigate("Reading List")}
-            hubIcon={false}
+            hubIcon={true}
           />
         </View>
         <Button
