@@ -18,7 +18,7 @@ import SquareButton from '../../components/SquareButton';
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
 
-export default function CalendarScreen() {
+export default function Book3() {
   const navigation = useNavigation();
   const styles = StyleSheet.create({
     container: {
@@ -79,66 +79,30 @@ export default function CalendarScreen() {
 
   return (
     <View style={styles.container}>
-          <View style={[styles.buttonView, { paddingTop: 10 }]}>
+
+      <View style={[styles.buttonView, { paddingTop: 10 }]}>
         <SquareButton
           name="book"
-          text="Book1"
+          text="Information about the Author"
           buttonSize={90}
           textSize={13}
           onPress={() => navigation.navigate("Book1")}
         />
-      {/* <View style={styles.container2}>
-        <Image
-          source={require('../../assets/images/Torri.png')}
-          style={{ width: 30, height: 30, top: '-3%' }}
+        <SquareButton
+          name="book"
+          text="Releated Reads"
+          buttonSize={90}
+          textSize={13}
+          onPress={() => navigation.navigate("Book2")}
         />
-        <Text style={styles.challengetext}>Rakkasan Challenge</Text>
-        <TouchableOpacity>
-          <Card>
-            <Image
-              source={require('../../assets/images/fitness/fitness2.jpg')}
-              style={{
-                width: screenWidth / 1.2,
-                height: screenWidth / 2.1,
-                borderRadius: 10,
-              }}
-            />
-          </Card>
-        </TouchableOpacity>
-
-        <Text style={styles.fitnesstext}>Fast Fitness</Text>
-        <View style={styles.scrollContainer}>
-          <Carousel
-            ref={carouselRef}
-            sliderWidth={screenWidth}
-            sliderHeight={screenWidth}
-            itemWidth={screenWidth - 60}
-            data={entries}
-            renderItem={renderItem}
-            hasParallaxImages
-            firstItem={1}
-          />
-        </View>
-        <View style={[styles.buttonView, { paddingTop: 10 }]}>
-          <SquareButton
-            name="food-apple"
-            text="Nutrition"
-            buttonSize={90}
-            textSize={13}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
-          />
-          <SquareButton
-            name="food-fork-drink"
-            text="DFAC"
-            buttonSize={90}
-            textSize={14}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
-          />
-        </View>
-      </View> */}
+        <SquareButton
+          name="book"
+          text="More information"
+          buttonSize={90}
+          textSize={13}
+          onPress={() => navigation.navigate("Book3")}
+        />
+      </View>
     </View>
-          </View>
   );
 }
