@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 
@@ -117,7 +118,7 @@ export default function RakFitScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.container2}>
         <Image
           source={require('../../assets/images/Torri.png')}
@@ -154,21 +155,37 @@ export default function RakFitScreen() {
           <SquareButton
             name="food-apple"
             text="Nutrition"
-            buttonSize={90}
-            textSize={13}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
+            buttonSize={50}
+            textSize={10}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
           />
           <SquareButton
             name="food-fork-drink"
             text="DFAC"
-            buttonSize={90}
-            textSize={14}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
+            buttonSize={50}
+            textSize={10}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
+          />
+          <SquareButton
+            name="Placeholder"
+            text="Placeholder"
+            buttonSize={50}
+            textSize={8}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
+          />
+          <SquareButton
+            name="Placeholder"
+            text="Placeholder"
+            buttonSize={50}
+            textSize={8}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }

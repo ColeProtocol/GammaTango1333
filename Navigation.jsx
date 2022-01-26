@@ -252,6 +252,8 @@ function HubStackScreen({ navigation }) {
       />
       <HubStack.Screen name="Preferences" component={Preferences} />
       <HubStack.Screen name="Avatar List" component={AccountAvatarList} />
+      <HubStack.Screen name="ConstructionScreen" component={ConstructionScreen} />
+
     </HubStack.Navigator>
   );
 }
