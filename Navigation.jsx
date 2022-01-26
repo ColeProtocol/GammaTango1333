@@ -34,6 +34,7 @@ import ProcessingScreen from "./tabs/hubScreens/ProcessingScreen";
 import InProcessing from "./tabs/hubScreens/InProcessing";
 import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
+import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
 import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
@@ -153,6 +154,7 @@ function HubStackScreen({ navigation }) {
         }
       />
       <HubStack.Screen name="Army Resources" component={ResourcesScreen} />
+      <HubStack.Screen name="ResourcesPDF" component={ResourcesPDF} />
       <HubStack.Screen
         name="RAKFIT"
         component={
