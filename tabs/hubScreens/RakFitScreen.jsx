@@ -120,10 +120,10 @@ export default function RakFitScreen() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container2}>
-        <Image
+        {/* <Image
           source={require('../../assets/images/Torri.png')}
           style={{ width: 30, height: 30, top: '-3%' }}
-        />
+        /> */}
         <Text style={styles.challengetext}>Rakkasan Challenge</Text>
         <TouchableOpacity>
           <Card>
@@ -131,7 +131,7 @@ export default function RakFitScreen() {
               source={require('../../assets/images/fitness/fitness2.jpg')}
               style={{
                 width: screenWidth / 1.2,
-                height: screenWidth / 2.1,
+                height: screenHeight / 4.5,
                 borderRadius: 10,
               }}
             />
