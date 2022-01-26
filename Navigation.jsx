@@ -115,7 +115,7 @@ function HubStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerRight: () => (
           <IconButton
             icon="account"
@@ -158,8 +158,8 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="RAKFIT"
         component={
-          // RakFitScreen
-          ConstructionScreen
+          RakFitScreen
+          //ConstructionScreen
         }
       />
 
@@ -266,7 +266,7 @@ function NewsStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -302,7 +302,7 @@ function CommandStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -390,7 +390,7 @@ function ChatStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
       }}
     >
       {/*       <ChatStack.Screen
