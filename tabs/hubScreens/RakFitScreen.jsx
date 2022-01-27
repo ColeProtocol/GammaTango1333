@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,39 +6,50 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
-} from 'react-native';
+} from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { useNavigation } from '@react-navigation/native';
-import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import { useNavigation } from "@react-navigation/native";
+import Carousel, { ParallaxImage } from "react-native-snap-carousel";
 
-import Card from '../../components/Card';
-import Colors from '../../constants/Colors';
-import Dimensions from '../../constants/Dimensions';
-import SquareButton from '../../components/SquareButton';
+
+import Card from "../../components/Card";
+import Colors from "../../constants/Colors";
+import Dimensions from "../../constants/Dimensions";
+import SquareButton from "../../components/SquareButton";
 
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
 const ENTRIES1 = [
-  {
-    title: 'City Jog',
-    illustration: require('../../assets/images/fitness/fitness1.jpg'),
-  },
-  {
-    title: 'Stretches',
-    illustration: require('../../assets/images/fitness/fitness4.jpg'),
-  },
-  {
-    title: 'Sprints',
-    illustration: require('../../assets/images/fitness/fitness2.jpg'),
-  },
-  {
-    title: 'Lifting',
-    illustration: require('../../assets/images/fitness/fitness5.jpg'),
-  },
-  {
-    title: 'Yoga',
-    illustration: require('../../assets/images/fitness/fitness3.jpg'),
-  },
+  [
+    {
+      title: "City Jog",
+      illustration: require("../../assets/images/fitness/fitness1.jpg"),
+    },
+    {
+      title: "Stretches",
+      illustration: require("../../assets/images/fitness/fitness4.jpg"),
+    },
+  ],
+  [
+    {
+      title: "Sprints",
+      illustration: require("../../assets/images/fitness/fitness2.jpg"),
+    },
+    {
+      title: "Lifting",
+      illustration: require("../../assets/images/fitness/fitness5.jpg"),
+    },
+  ],
+  [
+    {
+      title: "Yoga",
+      illustration: require("../../assets/images/fitness/fitness3.jpg"),
+    },
+    {
+      title: "Yoga",
+      illustration: require("../../assets/images/fitness/fitness3.jpg"),
+    },
+  ],
 ];
 
 export default function RakFitScreen() {
@@ -52,25 +63,29 @@ export default function RakFitScreen() {
     container: {
       flex: 1,
       backgroundColor: Colors.white,
-      width: '100%',
+      width: "100%",
     },
     container2: {
       flex: 1,
       backgroundColor: Colors.white,
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 40,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 10,
     },
     buttonView: {
-      width: '85%',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
+      width: "85%",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-evenly",
       paddingBottom: 55,
     },
     challengetext: {
       fontSize: 25,
       color: Colors.primary,
+    },
+    centerText: {
+      justifyContent: "center",
+      alignItems: "center",
     },
     fitnesstext: {
       fontSize: 22,
@@ -80,11 +95,12 @@ export default function RakFitScreen() {
       padding: 5,
     },
     item: {
-      width: screenWidth - 60,
-      height: screenHeight / 5.5,
+      width: screenWidth / 2.7,
+      height: screenHeight / 4,
     },
     scrollContainer: {
       flex: 1,
+      marginLeft: 10,
     },
     imageContainer: {
       flex: 1,
@@ -94,45 +110,50 @@ export default function RakFitScreen() {
     },
     image: {
       ...StyleSheet.absoluteFillObject,
-      resizeMode: 'cover',
+      resizeMode: "cover",
     },
     title: {
-      fontSize: 20,
-      color: Colors.white,
-
-      top: '-12%',
-      left: '5%',
+      fontSize: 14,
+      color: Colors.black,
+      top: "-15%",
     },
   });
   const renderItem = ({ item, index }, parallaxProps) => (
     <View style={styles.item}>
       <ParallaxImage
-        source={item.illustration}
+        source={item[0].illustration}
         containerStyle={styles.imageContainer}
         style={styles.image}
         parallaxFactor={0.4}
         {...parallaxProps}
       />
-      <Text style={styles.title}>{item.title}</Text>
+      <View style={styles.centerText}>
+        <Text style={styles.title}>{item[0].title}</Text>
+      </View>
+      <ParallaxImage
+        source={item[1].illustration}
+        containerStyle={styles.imageContainer}
+        style={styles.image}
+        parallaxFactor={0.4}
+        {...parallaxProps}
+      />
+      <View style={styles.centerText}>
+        <Text style={styles.title}>{item[1].title}</Text>
+      </View>
     </View>
   );
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container2}>
-        {/* <Image
-          source={require('../../assets/images/Torri.png')}
-          style={{ width: 30, height: 30, top: '-3%' }}
-        /> */}
         <Text style={styles.challengetext}>Rakkasan Challenge</Text>
         <TouchableOpacity>
           <Card>
             <Image
-              source={require('../../assets/images/fitness/fitness2.jpg')}
+              source={require("../../assets/images/fitness/fitness2.jpg")}
               style={{
-                width: screenWidth / 1.2,
-                height: screenHeight / 4.5,
-                borderRadius: 10,
+                width: screenWidth / 1.5,
+                height: screenWidth / 2.5
               }}
             />
           </Card>
@@ -144,11 +165,14 @@ export default function RakFitScreen() {
             ref={carouselRef}
             sliderWidth={screenWidth}
             sliderHeight={screenWidth}
-            itemWidth={screenWidth - 60}
+            itemWidth={screenWidth / 2.7 + 5}
             data={entries}
             renderItem={renderItem}
             hasParallaxImages
             firstItem={1}
+            activeSlideAlignment={"start"}
+            inactiveSlideScale={1}
+            inactiveSlideOpacity={1}
           />
         </View>
         <View style={[styles.buttonView, { paddingTop: 10 }]}>
