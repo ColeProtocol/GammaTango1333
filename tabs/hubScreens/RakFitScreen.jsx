@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
+import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from '@react-navigation/native';
 import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 
@@ -117,12 +118,12 @@ export default function RakFitScreen() {
   );
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.container2}>
-        <Image
+        {/* <Image
           source={require('../../assets/images/Torri.png')}
           style={{ width: 30, height: 30, top: '-3%' }}
-        />
+        /> */}
         <Text style={styles.challengetext}>Rakkasan Challenge</Text>
         <TouchableOpacity>
           <Card>
@@ -130,7 +131,7 @@ export default function RakFitScreen() {
               source={require('../../assets/images/fitness/fitness2.jpg')}
               style={{
                 width: screenWidth / 1.2,
-                height: screenWidth / 2.1,
+                height: screenHeight / 4.5,
                 borderRadius: 10,
               }}
             />
@@ -154,21 +155,37 @@ export default function RakFitScreen() {
           <SquareButton
             name="food-apple"
             text="Nutrition"
-            buttonSize={90}
-            textSize={13}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
+            buttonSize={50}
+            textSize={10}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
           />
           <SquareButton
             name="food-fork-drink"
             text="DFAC"
-            buttonSize={90}
-            textSize={14}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
+            buttonSize={50}
+            textSize={10}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
+          />
+          <SquareButton
+            name="Placeholder"
+            text="Placeholder"
+            buttonSize={50}
+            textSize={8}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
+          />
+          <SquareButton
+            name="Placeholder"
+            text="Placeholder"
+            buttonSize={50}
+            textSize={8}
+            iconSize={30}
+            onPress={() => navigation.navigate("ConstructionScreen")}
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
