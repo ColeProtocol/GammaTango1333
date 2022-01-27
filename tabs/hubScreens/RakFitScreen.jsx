@@ -11,6 +11,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
 
+
 import Card from "../../components/Card";
 import Colors from "../../constants/Colors";
 import Dimensions from "../../constants/Dimensions";
@@ -152,7 +153,7 @@ export default function RakFitScreen() {
               source={require("../../assets/images/fitness/fitness2.jpg")}
               style={{
                 width: screenWidth / 1.5,
-                height: screenWidth / 2.5,
+                height: screenWidth / 2.5
               }}
             />
           </Card>
