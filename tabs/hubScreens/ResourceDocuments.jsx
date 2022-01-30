@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   View, StyleSheet, Image,
 } from 'react-native';
@@ -6,12 +5,15 @@ import { useNavigation } from '@react-navigation/native';
 
 import Colors from '../../constants/Colors';
 import RectButton from '../../components/RectButton';
-
-import HistoryPic from '../../assets/images/history2.png';
-import Flag from '../../assets/images/Flag.jpg';
+import axios from 'axios';
 import { ScrollView } from 'react-native-gesture-handler';
+import React, { useEffect, useState } from 'react';
+import getData from "../../assets/Async/getData";
 
-export default function HistoryScreen() {
+export default function ResourceDocuments({route}) {
+  const {documents} = route.params;
+  console.log(documents);
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -37,15 +39,20 @@ export default function HistoryScreen() {
     <ScrollView style={styles.sv}>
       <View style={styles.container}>
         <View style={styles.buttonView}>
-          <RectButton
-            text="Document 1"
-            onPress={() => {
-              //navigation.navigate('Notable Events');
-            }}
-            icons
-          />
+        {documents.map(({ Document, Name, id}) => (
+            <RectButton
+              text={Name}
+              onPress={() => {
+                //console.log(Document[0].url)
+                navigation.navigate('ResourcesPDF',{url: Document[0].url});
+              }}
+              icons
+            />
+          ))}
         </View>
       </View>
     </ScrollView>
   );
 }
+
+/**/

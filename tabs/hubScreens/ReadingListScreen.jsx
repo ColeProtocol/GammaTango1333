@@ -49,6 +49,13 @@ export default function BattScreen() {
           textSize={13}
           onPress={() => navigation.navigate("Book2")}
         />
+        <SquareButton
+          name="book"
+          text="Book3"
+          buttonSize={90}
+          textSize={13}
+          onPress={() => navigation.navigate("Book3")}
+        />
       </View>
     </View>
   );

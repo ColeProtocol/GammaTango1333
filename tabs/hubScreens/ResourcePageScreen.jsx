@@ -12,7 +12,7 @@ import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 
 export default function ResourcePageScreen({ route }) {
   const navigation = useNavigation();
-  const { image, name, description, events } = route.params;
+  const { id, image, name, description, events, documents } = route.params;
   var dates = {};
   var eventDescriptions = {};
   //let elems = {};
@@ -163,7 +163,7 @@ export default function ResourcePageScreen({ route }) {
             fontSize: 20,
             fontWeight: "bold",
           }}
-          onPress={() => navigation.navigate("Resource Documents")}
+          onPress={() => navigation.navigate("Resource Documents",{documents: documents})}
         >
           Documents
         </Button>

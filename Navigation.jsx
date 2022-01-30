@@ -34,10 +34,12 @@ import ProcessingScreen from "./tabs/hubScreens/ProcessingScreen";
 import InProcessing from "./tabs/hubScreens/InProcessing";
 import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
+import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
 import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
+import Book3 from "./tabs/hubScreens/Book3";
 
 // battalion screens
 import BattUnitScreen from "./tabs/hubScreens/BattUnitScreen";
@@ -152,6 +154,7 @@ function HubStackScreen({ navigation }) {
         }
       />
       <HubStack.Screen name="Army Resources" component={ResourcesScreen} />
+      <HubStack.Screen name="ResourcesPDF" component={ResourcesPDF} />
       <HubStack.Screen
         name="RAKFIT"
         component={
@@ -177,6 +180,7 @@ function HubStackScreen({ navigation }) {
       />
       <HubStack.Screen name="Book1" component={Book1} />
       <HubStack.Screen name="Book2" component={Book2} />
+      <HubStack.Screen name="Book3" component={Book3} />
 
       <HubStack.Screen name="Request a Feature" component={NewRequest} />
 

@@ -23,7 +23,7 @@ export default function ResourcesScreen() {
             Authorization: `Bearer ${jwt}`,
           },
         });
-        //console.log(request.data);
+        console.log(request.data);
         //const armyResources = request.data.filter(
         //(data) => data.resource_type === 'army',
         //);
@@ -65,21 +65,22 @@ export default function ResourcesScreen() {
   return (
     <ScrollView style={styles.sv}>
       <View style={styles.container}>
-        {resources.map(({ Id, Name, Logo, Description, Events}) => (
-          <View style={styles.buttons} key={Id} >
+        {resources.map(({ id, Name, Logo, Description, Events, Documents}) => (
+          <View style={styles.buttons} key={id} >
             <ResourceButton
-              key={Id}
+              key={id}
               text={Name + '\n' + Description}
               image={Logo.url}
               iconWidth={70}
               iconHeight={70}
               onPress={() =>
                 navigation.navigate("Resource", {
-                  id: Id,
+                  id: id,
                   name: Name,
                   events: Events,
                   image: Logo.url,
                   description: Description,
+                  documents: Documents
                 })
               }
             />
