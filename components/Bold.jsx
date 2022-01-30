@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 export default function Bold({ content }) {
   const styles = StyleSheet.create({
-    italicized: {
+    bold: {
       fontStyle: 'bold',
       fontSize: 18,
       fontWeight: '600',
@@ -13,7 +13,7 @@ export default function Bold({ content }) {
   });
   return (
     <View>
-      <Text style={styles.italicized}>{content}</Text>
+      <Text style={styles.bold}>{content}</Text>
     </View>
   );
 }
