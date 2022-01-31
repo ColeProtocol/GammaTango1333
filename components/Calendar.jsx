@@ -13,6 +13,7 @@ class Calendar extends React.Component {
      month = this.state.activeDate.getMonth();
  
 
+
     generateMatrix() {
          matrix = [];
         // Create header
