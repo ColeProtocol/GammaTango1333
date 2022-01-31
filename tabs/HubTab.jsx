@@ -151,12 +151,12 @@ export default function HubTab() {
             hubIcon={true}
           />
           <SquareButton
-            name="Reading"
+            name="Reading List"
             text="Reading List"
             buttonSize={75}
             textSize={11}
             onPress={() => navigation.navigate("Reading List")}
-            hubIcon={false}
+            hubIcon={true}
           />
         </View>
         <Button
