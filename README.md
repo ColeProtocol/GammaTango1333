@@ -19,10 +19,14 @@ git checkout main & git fetch - p origin & git merge origin/main & git checkout 
 # Release Notes - JIF 1321
 ## v0.1.0
 ### Features
-(what are you including in this release, remember this should only be the work done since the last release)
+* Changed the view of the RAK fit page to view many different workout categories to browse several workouts in a single glance compared to slowly scrolling through one at a time. 
+
+* Fixed the spacing on the RAK Fit page to have appropriate spacing between each section, so that the page is less crowded and easy to read. 
+
+* Added place holders for different pages and sepparate exercise goals widgets.
 
 ### Bug Fixes 
-(what issues/bugs did you fix this Sprint, Sprint 1 is usually the only Sprint that may not have bug fixes (but it could))
+* The RAKFit page was not connected correctly, so the routing to the pages were fixed.
 
 ### Known Issues (optional)
 (any issues/bug that you know about that can be addressed in the next release, this can help you generate the bug fixes for the next version)
