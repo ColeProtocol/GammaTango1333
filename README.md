@@ -13,6 +13,21 @@ Run this command any time you want to bring your branch up to a current point wi
 
 git checkout main & git fetch - p origin & git merge origin/main & git checkout <!\*YOUR NAME/BRANCH\*!> & git merge main & git push origin <!\*YOUR NAME/BRANCH\*!>
 
+## Release Notes - JIA 1333
+### Version 0.1.0
+
+#### New Features
+* Basic calendar functionality
+* Custom icons for new tabs
+* Updated reading tab with framework for later changes
+
+#### Bug Fixes
+* Fixed spacing issue on hub page
+
+#### Known Issues
+* Calendar is currently "frozen"
+* Search bar is non-functional
+
 # RAK App Summary - JIF 1321
 (summary here)
 
