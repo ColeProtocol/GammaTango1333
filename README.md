@@ -23,7 +23,11 @@ git checkout main & git fetch - p origin & git merge origin/main & git checkout 
 
 * Fixed the spacing on the RAK Fit page to have appropriate spacing between each section, so that the page is less crowded and easy to read. 
 
-* Added place holders for different pages and sepparate exercise goals widgets.
+* Place holders for different pages are now visible to give an idea of future UI.
+
+* Separated exercise goals widgets.
 
 ### Bug Fixes 
-* The RAKFit page was not connected correctly, so the routing to the pages were fixed.
+* Connected the RAKFit page to all appropriate pages.
+
+* Fixed page routing issues.
