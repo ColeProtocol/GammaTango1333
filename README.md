@@ -27,7 +27,3 @@ git checkout main & git fetch - p origin & git merge origin/main & git checkout 
 
 ### Bug Fixes 
 * The RAKFit page was not connected correctly, so the routing to the pages were fixed.
-
-### Known Issues (optional)
-(any issues/bug that you know about that can be addressed in the next release, this can help you generate the bug fixes for the next version)
-
