@@ -38,6 +38,7 @@ import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
+import CreatorPageScreen from "./tabs/hubScreens/CreatorPageScreen";
 
 // battalion screens
 import BattUnitScreen from "./tabs/hubScreens/BattUnitScreen";
@@ -177,6 +178,14 @@ function HubStackScreen({ navigation }) {
       />
       <HubStack.Screen name="Book1" component={Book1} />
       <HubStack.Screen name="Book2" component={Book2} />
+
+      <HubStack.Screen
+        name="Creator Page"
+        component={
+          // Creators page
+          CreatorPageScreen
+        }
+      />
 
       <HubStack.Screen name="Request a Feature" component={NewRequest} />
 
