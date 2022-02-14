@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import {
   View,
   Text,
@@ -19,7 +18,7 @@ import SquareButton from '../../components/SquareButton';
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
 
-export default function CalendarScreen() {
+export default function Book3() {
   const navigation = useNavigation();
   const styles = StyleSheet.create({
     container: {
@@ -79,34 +78,31 @@ export default function CalendarScreen() {
   });
 
   return (
-    <View style={{ paddingTop: 50, flex: 1 }}>
-        <Calendar
-          // Initially visible month. Default = Date()
-          current={'2022-01-01'}
-          // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
-          minDate={'2012-05-10'}
-          // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
-          maxDate={'2022-05-30'}
-          // Handler which gets executed on day press. Default = undefined
-          onDayPress={day => {
-            console.log('selected day', day);
-          }}
-          // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-          monthFormat={'yyyy MM'}
-          // Handler which gets executed when visible month changes in calendar. Default = undefined
-          onMonthChange={month => {
-            console.log('month changed', month);
-          }}
-          // Hide month navigation arrows. Default = false
-          hideArrows={true}
-          // Do not show days of other months in month page. Default = false
-          hideExtraDays={true}
-          // If hideArrows=false and hideExtraDays=false do not swich month when tapping on greyed out
-          // day from another month that is visible in calendar page. Default = false
-          disableMonthChange={true}
-          // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
-          firstDay={1}
+    <View style={styles.container}>
+
+      <View style={[styles.buttonView, { paddingTop: 10 }]}>
+        <SquareButton
+          name="book"
+          text="Information about the Author"
+          buttonSize={90}
+          textSize={13}
+          onPress={() => navigation.navigate("Book1")}
+        />
+        <SquareButton
+          name="book"
+          text="Releated Reads"
+          buttonSize={90}
+          textSize={13}
+          onPress={() => navigation.navigate("Book2")}
+        />
+        <SquareButton
+          name="book"
+          text="More information"
+          buttonSize={90}
+          textSize={13}
+          onPress={() => navigation.navigate("Book3")}
         />
       </View>
+    </View>
   );
 }

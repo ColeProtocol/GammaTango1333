@@ -123,7 +123,7 @@ export default function HubTab() {
             hubIcon={true}
           />
         </View>
-        <View style={[styles.buttonView, { paddingBottom: 45 }]}>
+        <View style={[styles.buttonView]}>
           <SquareButton
             name="Resources"
             text="Army Resources"
@@ -148,15 +148,15 @@ export default function HubTab() {
             buttonSize={75}
             textSize={10}
             onPress={() => navigation.navigate("Calendar")}
-            hubIcon={false}
+            hubIcon={true}
           />
           <SquareButton
-            name="Reading"
+            name="Reading List"
             text="Reading List"
             buttonSize={75}
             textSize={11}
             onPress={() => navigation.navigate("Reading List")}
-            hubIcon={false}
+            hubIcon={true}
           />
           </View>
           <View style={[styles.buttonView, { paddingBottom: 45 }]}>
