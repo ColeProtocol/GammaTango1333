@@ -158,6 +158,8 @@ export default function HubTab() {
             onPress={() => navigation.navigate("Reading List")}
             hubIcon={false}
           />
+          </View>
+          <View style={[styles.buttonView, { paddingBottom: 45 }]}>
           <SquareButton
              name="Creator"
              text="Creator Page"
