@@ -35,7 +35,7 @@ import InProcessing from "./tabs/hubScreens/InProcessing";
 import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
 import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
-import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
+import CalendarScreen from "./tabs/hubScreens/VideoScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
