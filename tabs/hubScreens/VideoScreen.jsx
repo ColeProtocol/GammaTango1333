@@ -33,6 +33,8 @@ export default function VideoScreen() {
         position: 'absolute',
         marginBottom: 30,
         alignItems: 'center',
+        //bottom: 40,
+        //flexDirection: 'row',
      },
      recordButtonContainer: {
         flex: 1,
@@ -53,12 +55,12 @@ export default function VideoScreen() {
        borderColor: 'white',
        borderRadius: 10,
        overflow: 'hidden',
-       width: 50,
-       height: 50,
+       width: 250,
+       height: 250,
      },
      galleryButtonImage: {
-       width: 50,
-       height: 50,
+       width: 250,
+       height: 250,
      }
      });
   const[hasCameraPermissions, setHasCameraPermissions] = useState(false);
@@ -87,10 +89,11 @@ export default function VideoScreen() {
         setHasGalleryPermissions(galleryStatus.status == 'granted');
         console.log("gallstat")
         console.log(galleryStatus);
-        if(galleryStatus.status == 'granted') {
+        //if(galleryStatus.status == 'granted') {
             const userGalleryMedia = await MediaLibrary.getAssetsAsync({sortBy: ['creationTime'], mediaType: ['video'] });
+            
             setGalleryItems(userGalleryMedia.assets)
-        }
+        //}
     })()
    
 
@@ -125,9 +128,12 @@ export default function VideoScreen() {
       quality: 1
     });
     if(!result.cancelled) {
+      console.log(result);
       //pass into save component
     }
   }
+  console.log(galleryItems)
+  console.log(galleryItems[0]);
   if(!hasCameraPermissions|| !hasAudioPermissions){ //|| !hasGalleryPermissions) { //this doesnt work for some reason. please look into it. 
       return (
         <View>
@@ -169,8 +175,12 @@ export default function VideoScreen() {
                     <Image 
                       styles = {styles.galleryButtonImage}
                       source={{uri: galleryItems[0].uri}}
+                      
                     />}
+                    
+                    <Text>Please select a video to upload</Text>
               </TouchableOpacity>
+             
           </View>
           </View>
       </View>
