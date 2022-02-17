@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { ScrollView, View, Text, StyleSheet } from "react-native";
 import { Card, CardItem, Body } from "native-base";
 import axios from "axios";
 import Colors from "../../constants/Colors";
@@ -14,9 +14,10 @@ export default function CookingTutorialScreen({ route }) {
       height: "100%",
       alignItems: "center",
     },
-    cardContainer: {
-      marginTop: 50,
-      width: "90%",
+    scrollContainer: {
+      flex: 1,
+      width: "100%",
+      height: "100%",
     },
     title: {
       fontSize: 20,
@@ -28,15 +29,27 @@ export default function CookingTutorialScreen({ route }) {
     },
     placeholder: {
       width: "90%",
-      height: "100",
+      height: 200,
       backgroundColor: "teal",
+      marginBottom: 30,
     },
   });
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Lasagna</Text>
-      <View style={styles.placeholder}></View>
-    </View>
+    <ScrollView style={styles.scrollContainer}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Lasagna</Text>
+        <View style={styles.placeholder}></View>
+
+        <Text style={styles.title}>Grilled Chicken Sandwich</Text>
+        <View style={styles.placeholder}></View>
+
+        <Text style={styles.title}>Beef Cheeseburgers</Text>
+        <View style={styles.placeholder}></View>
+
+        <Text style={styles.title}>Fajitas</Text>
+        <View style={styles.placeholder}></View>
+      </View>
+    </ScrollView>
   );
 }
