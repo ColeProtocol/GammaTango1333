@@ -23,11 +23,11 @@ const ENTRIES1 = [
   [
     {
       title: "City Jog",
-      illustration: require("../../assets/images/fitness/fitness1.jpg"),
+      illustration: require("../../assets/images/fitness/jog.jpeg"),
     },
     {
-      title: "Stretches",
-      illustration: require("../../assets/images/fitness/fitness4.jpg"),
+      title: "Agility",
+      illustration: require("../../assets/images/fitness/agility.jpeg"),
     },
   ],
   [
@@ -37,7 +37,7 @@ const ENTRIES1 = [
     },
     {
       title: "Lifting",
-      illustration: require("../../assets/images/fitness/fitness5.jpg"),
+      illustration: require("../../assets/images/fitness/lifting.jpeg"),
     },
   ],
   [
@@ -106,11 +106,11 @@ export default function RakFitScreen() {
       flex: 1,
       marginBottom: Platform.select({ ios: 0, android: 1 }),
       backgroundColor: Colors.white,
-      borderRadius: 30,
+      borderRadius: 15,      
     },
     image: {
       ...StyleSheet.absoluteFillObject,
-      resizeMode: "cover",
+      // resizeMode: "stretch",
     },
     title: {
       fontSize: 14,
