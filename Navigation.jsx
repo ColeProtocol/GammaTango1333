@@ -107,6 +107,7 @@ import iconConfig from "./assets/icomoon/iconConfig";
 
 // rakfit screens
 import CookingTutorialScreen from "./tabs/rakfitScreens/CookingTutorialScreen";
+import DFACScreen from "./tabs/rakfitScreens/DFACScreen";
 
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
@@ -257,6 +258,7 @@ function HubStackScreen({ navigation }) {
         name="Cooking Tutorials"
         component={CookingTutorialScreen}
       />
+      <HubStack.Screen name="DFAC" component={DFACScreen} />
       <HubStack.Screen name="Preferences" component={Preferences} />
       <HubStack.Screen name="Avatar List" component={AccountAvatarList} />
       <HubStack.Screen

@@ -189,7 +189,7 @@ export default function RakFitScreen() {
             buttonSize={50}
             textSize={10}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("DFAC")}
           />
           <SquareButton
             name="Placeholder"

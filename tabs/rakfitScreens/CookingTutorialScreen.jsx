@@ -13,6 +13,7 @@ export default function CookingTutorialScreen({ route }) {
       width: "100%",
       height: "100%",
       alignItems: "center",
+      marginTop: 10,
     },
     scrollContainer: {
       flex: 1,
