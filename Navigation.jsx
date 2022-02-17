@@ -26,6 +26,8 @@ import UserProfile from "./tabs/UserProfile";
 import BattScreen from "./tabs/hubScreens/BattScreen";
 import MapScreen from "./tabs/hubScreens/MapScreen";
 import ForumsScreen from "./tabs/hubScreens/ForumScreen";
+import H2FScreen from "./tabs/hubScreens/H2FScreen";
+import ACFTScreen from "./tabs/hubScreens/H2FResourceScreens/ACFTScreen";
 import ResourcesScreen from "./tabs/hubScreens/ResourcesScreen";
 import HistoryScreen from "./tabs/hubScreens/HistoryScreen";
 import SchoolsScreen from "./tabs/hubScreens/SchoolsScreen";
@@ -162,6 +164,9 @@ function HubStackScreen({ navigation }) {
           //ConstructionScreen
         }
       />
+      <HubStack.Screen name="H2F" component={H2FScreen} />
+      <HubStack.Screen name="ACFTScreen" component={ACFTScreen} />
+
 
       <HubStack.Screen
         name="Calendar"
