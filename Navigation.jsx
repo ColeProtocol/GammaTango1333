@@ -105,6 +105,9 @@ import SplashScreen from "./tabs/SplashScreen";
 import iconConfig from "./assets/icomoon/iconConfig";
 //import UserProfile from "./tabs/UserProfile";
 
+// rakfit screens
+import CookingTutorialScreen from "./tabs/rakfitScreens/CookingTutorialScreen";
+
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
   return (
@@ -250,10 +253,16 @@ function HubStackScreen({ navigation }) {
         component={UserProfile}
         options={{ headerLeft: null }}
       />
+      <HubStack.Screen
+        name="Cooking Tutorials"
+        component={CookingTutorialScreen}
+      />
       <HubStack.Screen name="Preferences" component={Preferences} />
       <HubStack.Screen name="Avatar List" component={AccountAvatarList} />
-      <HubStack.Screen name="ConstructionScreen" component={ConstructionScreen} />
-
+      <HubStack.Screen
+        name="ConstructionScreen"
+        component={ConstructionScreen}
+      />
     </HubStack.Navigator>
   );
 }

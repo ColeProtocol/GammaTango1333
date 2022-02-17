@@ -11,7 +11,6 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
 
-
 import Card from "../../components/Card";
 import Colors from "../../constants/Colors";
 import Dimensions from "../../constants/Dimensions";
@@ -23,11 +22,11 @@ const ENTRIES1 = [
   [
     {
       title: "City Jog",
-      illustration: require("../../assets/images/fitness/fitness1.jpg"),
+      illustration: require("../../assets/images/fitness/jog.jpeg"),
     },
     {
-      title: "Stretches",
-      illustration: require("../../assets/images/fitness/fitness4.jpg"),
+      title: "Agility",
+      illustration: require("../../assets/images/fitness/agility.jpeg"),
     },
   ],
   [
@@ -37,7 +36,7 @@ const ENTRIES1 = [
     },
     {
       title: "Lifting",
-      illustration: require("../../assets/images/fitness/fitness5.jpg"),
+      illustration: require("../../assets/images/fitness/lifting.jpeg"),
     },
   ],
   [
@@ -106,11 +105,11 @@ export default function RakFitScreen() {
       flex: 1,
       marginBottom: Platform.select({ ios: 0, android: 1 }),
       backgroundColor: Colors.white,
-      borderRadius: 30,
+      borderRadius: 15,
     },
     image: {
       ...StyleSheet.absoluteFillObject,
-      resizeMode: "cover",
+      // resizeMode: "stretch",
     },
     title: {
       fontSize: 14,
@@ -153,7 +152,7 @@ export default function RakFitScreen() {
               source={require("../../assets/images/fitness/fitness2.jpg")}
               style={{
                 width: screenWidth / 1.5,
-                height: screenWidth / 2.5
+                height: screenWidth / 2.5,
               }}
             />
           </Card>
@@ -202,11 +201,11 @@ export default function RakFitScreen() {
           />
           <SquareButton
             name="Placeholder"
-            text="Placeholder"
+            text="Cooking Tutorials"
             buttonSize={50}
             textSize={8}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("Cooking Tutorials")}
           />
         </View>
       </View>
