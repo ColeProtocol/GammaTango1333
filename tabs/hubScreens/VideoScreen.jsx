@@ -13,12 +13,15 @@ import * as ImagePicker from 'expo-image-picker';
 //import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import {Camera} from 'expo-camera';
 import { Audio } from 'expo-av';
-
+import { Searchbar } from "react-native-paper";
 import * as MediaLibrary from 'expo-media-library';
 import { useContext } from 'react';
 
 
 export default function VideoScreen() {
+  const [searchQuery, setSearchQuery] = React.useState("");
+
+  const onChangeSearch = (query) => setSearchQuery(query);
   const styles = StyleSheet.create({
      container : {
            flex: 1,
@@ -137,8 +140,12 @@ export default function VideoScreen() {
       )
   }
   return (
-
     <View Style = {styles.container}>
+        <Searchbar
+        placeholder="Search"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+        />
         {IsFocused ? 
         <Camera
         ref = {ref => setCameraRef(ref)}
