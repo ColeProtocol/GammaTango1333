@@ -11,7 +11,6 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
 
-
 import Card from "../../components/Card";
 import Colors from "../../constants/Colors";
 import Dimensions from "../../constants/Dimensions";
@@ -106,7 +105,7 @@ export default function RakFitScreen() {
       flex: 1,
       marginBottom: Platform.select({ ios: 0, android: 1 }),
       backgroundColor: Colors.white,
-      borderRadius: 15,      
+      borderRadius: 15,
     },
     image: {
       ...StyleSheet.absoluteFillObject,
@@ -153,7 +152,7 @@ export default function RakFitScreen() {
               source={require("../../assets/images/fitness/fitness2.jpg")}
               style={{
                 width: screenWidth / 1.5,
-                height: screenWidth / 2.5
+                height: screenWidth / 2.5,
               }}
             />
           </Card>
@@ -190,7 +189,7 @@ export default function RakFitScreen() {
             buttonSize={50}
             textSize={12}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("DFAC")}
           />
           <SquareButton
             name="Placeholder"
@@ -202,11 +201,11 @@ export default function RakFitScreen() {
           />
           <SquareButton
             name="Placeholder"
-            text="Placeholder"
+            text="Cooking Tutorials"
             buttonSize={50}
             textSize={8}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("Cooking Tutorials")}
           />
         </View>
       </View>

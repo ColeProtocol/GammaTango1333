@@ -3,18 +3,7 @@ import { View, StyleSheet } from "react-native";
 import PDFReader from "rn-pdf-reader-js";
 import { Asset } from "expo-asset";
 
-let absolute_path = Asset.fromModule(
-  require("../../../assets/pdfs/ACFT_fueling.pdf")
-).uri;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-
-export default function Cookbook() {
+export default function DFACScreen() {
   return (
     <PDFReader
       style={styles.container}
@@ -25,3 +14,12 @@ export default function Cookbook() {
   );
 }
 
+let absolute_path = Asset.fromModule(
+  require("../../assets/pdfs/weight-management.pdf")
+).uri;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});

@@ -107,6 +107,10 @@ import SplashScreen from "./tabs/SplashScreen";
 import iconConfig from "./assets/icomoon/iconConfig";
 //import UserProfile from "./tabs/UserProfile";
 
+// rakfit screens
+import CookingTutorialScreen from "./tabs/rakfitScreens/CookingTutorialScreen";
+import DFACScreen from "./tabs/rakfitScreens/DFACScreen";
+
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
   return (
@@ -165,7 +169,7 @@ function HubStackScreen({ navigation }) {
         }
       />
       <HubStack.Screen name="H2F" component={H2FScreen} />
-      <HubStack.Screen name="ACFTScreen" component={ACFTScreen} />
+      <HubStack.Screen name="ACFT" component={ACFTScreen} />
 
 
       <HubStack.Screen
@@ -255,10 +259,17 @@ function HubStackScreen({ navigation }) {
         component={UserProfile}
         options={{ headerLeft: null }}
       />
+      <HubStack.Screen
+        name="Cooking Tutorials"
+        component={CookingTutorialScreen}
+      />
+      <HubStack.Screen name="DFAC" component={DFACScreen} />
       <HubStack.Screen name="Preferences" component={Preferences} />
       <HubStack.Screen name="Avatar List" component={AccountAvatarList} />
-      <HubStack.Screen name="ConstructionScreen" component={ConstructionScreen} />
-
+      <HubStack.Screen
+        name="ConstructionScreen"
+        component={ConstructionScreen}
+      />
     </HubStack.Navigator>
   );
 }
