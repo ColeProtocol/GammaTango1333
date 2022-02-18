@@ -88,6 +88,7 @@ import NewComment from "./tabs/otherScreens/NewComment";
 import PostDetail from "./tabs/otherScreens/PostDetail";
 import PostReply from "./tabs/otherScreens/PostReply";
 import ConstructionScreen from "./tabs/otherScreens/Construction";
+import FitVideosScreen from "./tabs/hubScreens/FitVideosScreen";
 
 //chat screen
 //import LoginScreen from "./tabs/chatScreens/LoginScreen";
@@ -115,7 +116,7 @@ function HubStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerRight: () => (
           <IconButton
             icon="account"
@@ -149,7 +150,7 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="Forum"
         component={
-          // ForumsScreen
+          //ForumsScreen
           ConstructionScreen
         }
       />
@@ -158,10 +159,11 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="RAKFIT"
         component={
-          // RakFitScreen
-          ConstructionScreen
+          RakFitScreen
+          //ConstructionScreen
         }
       />
+      <HubStack.Screen name="FitVideosScreen" component={FitVideosScreen} />
 
       <HubStack.Screen
         name="Calendar"
@@ -266,7 +268,7 @@ function NewsStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -302,7 +304,7 @@ function CommandStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -390,7 +392,7 @@ function ChatStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
       }}
     >
       {/*       <ChatStack.Screen

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,37 +6,37 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
-} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import Carousel, { ParallaxImage } from "react-native-snap-carousel";
 
-import Card from '../../components/Card';
-import Colors from '../../constants/Colors';
-import Dimensions from '../../constants/Dimensions';
-import SquareButton from '../../components/SquareButton';
+import Card from "../../components/Card";
+import Colors from "../../constants/Colors";
+import Dimensions from "../../constants/Dimensions";
+import SquareButton from "../../components/SquareButton";
 
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
 const ENTRIES1 = [
   {
-    title: 'City Jog',
-    illustration: require('../../assets/images/fitness/fitness1.jpg'),
+    title: "City Jog",
+    illustration: require("../../assets/images/fitness/fitness1.jpg"),
   },
   {
-    title: 'Stretches',
-    illustration: require('../../assets/images/fitness/fitness4.jpg'),
+    title: "Stretches",
+    illustration: require("../../assets/images/fitness/fitness4.jpg"),
   },
   {
-    title: 'Sprints',
-    illustration: require('../../assets/images/fitness/fitness2.jpg'),
+    title: "Sprints",
+    illustration: require("../../assets/images/fitness/fitness2.jpg"),
   },
   {
-    title: 'Lifting',
-    illustration: require('../../assets/images/fitness/fitness5.jpg'),
+    title: "Lifting",
+    illustration: require("../../assets/images/fitness/fitness5.jpg"),
   },
   {
-    title: 'Yoga',
-    illustration: require('../../assets/images/fitness/fitness3.jpg'),
+    title: "Yoga",
+    illustration: require("../../assets/images/fitness/fitness3.jpg"),
   },
 ];
 
@@ -51,20 +51,20 @@ export default function RakFitScreen() {
     container: {
       flex: 1,
       backgroundColor: Colors.white,
-      width: '100%',
+      width: "100%",
     },
     container2: {
       flex: 1,
       backgroundColor: Colors.white,
-      justifyContent: 'center',
-      alignItems: 'center',
+      justifyContent: "center",
+      alignItems: "center",
       marginTop: 40,
     },
     buttonView: {
-      width: '85%',
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
+      width: "85%",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-evenly",
       paddingBottom: 55,
     },
     challengetext: {
@@ -93,14 +93,14 @@ export default function RakFitScreen() {
     },
     image: {
       ...StyleSheet.absoluteFillObject,
-      resizeMode: 'cover',
+      resizeMode: "cover",
     },
     title: {
       fontSize: 20,
       color: Colors.white,
 
-      top: '-12%',
-      left: '5%',
+      top: "-12%",
+      left: "5%",
     },
   });
   const renderItem = ({ item, index }, parallaxProps) => (
@@ -120,14 +120,14 @@ export default function RakFitScreen() {
     <View style={styles.container}>
       <View style={styles.container2}>
         <Image
-          source={require('../../assets/images/Torri.png')}
-          style={{ width: 30, height: 30, top: '-3%' }}
+          source={require("../../assets/images/Torri.png")}
+          style={{ width: 30, height: 30, top: "-3%" }}
         />
         <Text style={styles.challengetext}>Rakkasan Challenge</Text>
         <TouchableOpacity>
           <Card>
             <Image
-              source={require('../../assets/images/fitness/fitness2.jpg')}
+              source={require("../../assets/images/fitness/fitness2.jpg")}
               style={{
                 width: screenWidth / 1.2,
                 height: screenWidth / 2.1,
@@ -166,6 +166,14 @@ export default function RakFitScreen() {
             textSize={14}
             iconSize={50}
             // onPress={() => navigation.navigate("Program")}
+          />
+          <SquareButton
+            name="video"
+            text="Videos"
+            buttonSize={90}
+            textSize={14}
+            iconSize={50}
+            onPress={() => navigation.navigate("FitVideosScreen")}
           />
         </View>
       </View>

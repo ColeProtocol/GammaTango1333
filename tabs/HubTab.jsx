@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -18,9 +18,9 @@ let pdfURL;
 const getBluebook = async () => {
   let { jwt } = await getData();
   const request = await axios.get("http://3.19.67.76:1337/Bluebooks", {
-       headers: {
-            Authorization: `Bearer ${jwt}`,
-       },
+    headers: {
+      Authorization: `Bearer ${jwt}`,
+    },
   });
   const url = request.data;
   pdfURL = url[0].URL;
@@ -44,9 +44,14 @@ export default function HubTab() {
       setEmail(json.user.email);
       setID(json.user.id);
 
-      Firebase.app().firestore().collection('users').doc(email).get().then((docSnapshot) => {
-        setPicture(docSnapshot.get('picture'));
-      });
+      Firebase.app()
+        .firestore()
+        .collection("users")
+        .doc(email)
+        .get()
+        .then((docSnapshot) => {
+          setPicture(docSnapshot.get("picture"));
+        });
     };
 
     getData();
@@ -92,7 +97,9 @@ export default function HubTab() {
             text="Bluebook"
             buttonSize={75}
             textSize={10}
-            onPress={() => navigation.navigate("Bluebook", {bluebookURL: pdfURL})}
+            onPress={() =>
+              navigation.navigate("Bluebook", { bluebookURL: pdfURL })
+            }
             hubIcon={true}
           />
           <SquareButton
