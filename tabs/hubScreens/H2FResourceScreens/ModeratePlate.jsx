@@ -16,7 +16,7 @@ export default function ACFTScreen() {
 
 
 let absolute_path = Asset.fromModule(
-  require("../../../assets/pdfs/ACFT1.pdf")
+  require("../../../assets/pdfs/Athlete_Plates_Moderate_Day_Handout.pdf")
 ).uri;
 
 const styles = StyleSheet.create({

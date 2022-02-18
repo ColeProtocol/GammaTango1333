@@ -49,8 +49,8 @@ export default function H2FScreen() {
     imageContainer: {
       flex: 1,
       marginBottom: Platform.select({ ios: 0, android: 1 }),
-      backgroundColor: Colors.white,
-      borderRadius: 15,      
+      backgroundColor: Colors.white,    
+      marginBottom:-15
     },
     // image: {
     //   ...StyleSheet.absoluteFillObject,
@@ -64,7 +64,7 @@ export default function H2FScreen() {
         textAlign: "left",
     },
     body: {
-        marginTop:10,
+        // marginTop:5,
         marginLeft: 5,
         marginRight: 5,
         fontSize: 18,
@@ -76,6 +76,21 @@ export default function H2FScreen() {
   return (
     <ScrollView style={styles.container}>
       {/* <View style={styles.container2}> */}
+      <View style={styles.imageContainer}>
+          <TouchableOpacity>
+            <Card>
+              <Image
+                source={require("../../assets/images/fitness/H2FImage.jpeg")}
+                style={{
+                  width: screenWidth/1.1,
+                  height: screenWidth/1.8,
+                  alignContent: "center"
+                }}
+              />
+            </Card>
+          </TouchableOpacity>
+
+        </View>
         <Text style={styles.title}>Intro:</Text>
 
         <Text style={styles.body}>     H2F or Holistic Health and Fitness is an 
@@ -83,6 +98,7 @@ export default function H2FScreen() {
                 non-physical human performance optimization under a single 
                 governance to enable commanders to improve Soldier health and 
                 fitness for combat.</Text>
+        
         <Text style={styles.title}>Resources:</Text>
 
         <View style={[styles.buttonView]}>
@@ -96,27 +112,27 @@ export default function H2FScreen() {
           />
           <SquareButton
             name="food-fork-drink"
-            text="DFAC"
+            text="Athlete Plate (Easy)"
             buttonSize={50}
-            textSize={12}
+            textSize={10}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("Plate For Easy Day")}
           />
           <SquareButton
-            name="Placeholder"
-            text="H2F"
+            name="food-apple"
+            text="Athlete Plate (Mod.)"
             buttonSize={50}
-            textSize={12}
+            textSize={10}
             iconSize={30}
-            onPress={() => navigation.navigate("H2F")}
+            onPress={() => navigation.navigate("Plate For Mod. Day")}
           />
           <SquareButton
-            name="Placeholder"
-            text="Placeholder"
+            name="food-fork-drink"
+            text="Athlete Plate (Hard)"
             buttonSize={50}
-            textSize={8}
+            textSize={10}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("Plate For Hard Day")}
           />
         </View>
       {/* </View> */}

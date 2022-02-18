@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import PDFReader from "rn-pdf-reader-js";
 import { Asset } from "expo-asset";
 
-export default function ACFTScreen() {
+export default function EasyPlate() {
   return (
     <PDFReader
       style={styles.container}
@@ -16,7 +16,7 @@ export default function ACFTScreen() {
 
 
 let absolute_path = Asset.fromModule(
-  require("../../../assets/pdfs/ACFT1.pdf")
+  require("../../../assets/pdfs/Athlete_Plates_Easy_Day_Handout.pdf")
 ).uri;
 
 const styles = StyleSheet.create({
