@@ -181,7 +181,7 @@ export default function RakFitScreen() {
             buttonSize={50}
             textSize={10}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("Nutrition")}
           />
           <SquareButton
             name="food-fork-drink"

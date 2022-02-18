@@ -108,6 +108,17 @@ import iconConfig from "./assets/icomoon/iconConfig";
 // rakfit screens
 import CookingTutorialScreen from "./tabs/rakfitScreens/CookingTutorialScreen";
 import DFACScreen from "./tabs/rakfitScreens/DFACScreen";
+import NutritionScreen from "./tabs/rakfitScreens/NutritionScreen";
+import MealTips from "./tabs/rakfitScreens/Nutrition/MealTips";
+import SampleMeals from "./tabs/rakfitScreens/Nutrition/SampleMeals";
+import ShoppingList from "./tabs/rakfitScreens/Nutrition/ShoppingList";
+import Holiday from "./tabs/rakfitScreens/Nutrition/Holiday";
+import Coupons from "./tabs/rakfitScreens/Nutrition/Coupons";
+import Cookbook from "./tabs/rakfitScreens/Nutrition/Cookbook";
+import SupplimentAlt from "./tabs/rakfitScreens/Nutrition/SupplimentAlt";
+import CookingGuide from "./tabs/rakfitScreens/Nutrition/CookingGuide";
+import PMCS from "./tabs/rakfitScreens/Nutrition/PMCS";
+import MRE from "./tabs/rakfitScreens/Nutrition/MRE";
 
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
@@ -259,6 +270,18 @@ function HubStackScreen({ navigation }) {
         component={CookingTutorialScreen}
       />
       <HubStack.Screen name="DFAC" component={DFACScreen} />
+      <HubStack.Screen name="Nutrition" component={NutritionScreen} />
+      <HubStack.Screen name="Cookbook" component={Cookbook} />
+      <HubStack.Screen name="Grocery Store Coupons" component={Coupons} />
+      <HubStack.Screen name="Holiday Meal Plan" component={Holiday} />
+      <HubStack.Screen name="Sample Meals" component={SampleMeals} />
+      <HubStack.Screen name="Barracks Shopping List" component={ShoppingList} />
+      <HubStack.Screen name="Suppliment Alternatives" component={SupplimentAlt} />
+      <HubStack.Screen name="Meal Tips" component={MealTips} />
+      <HubStack.Screen name="Cooking Guide" component={CookingGuide} />
+      <HubStack.Screen name="PMCS" component={PMCS} />
+      <HubStack.Screen name="MRE" component={MRE} />
+
       <HubStack.Screen name="Preferences" component={Preferences} />
       <HubStack.Screen name="Avatar List" component={AccountAvatarList} />
       <HubStack.Screen
