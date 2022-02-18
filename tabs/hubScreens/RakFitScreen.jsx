@@ -192,7 +192,7 @@ export default function RakFitScreen() {
             onPress={() => navigation.navigate("DFAC")}
           />
           <SquareButton
-            name="Placeholder"
+            name="food-variant"
             text="H2F"
             buttonSize={50}
             textSize={12}
@@ -200,7 +200,7 @@ export default function RakFitScreen() {
             onPress={() => navigation.navigate("H2F")}
           />
           <SquareButton
-            name="Placeholder"
+            name="video"
             text="Cooking Tutorials"
             buttonSize={50}
             textSize={8}
