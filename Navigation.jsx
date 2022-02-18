@@ -26,11 +26,6 @@ import UserProfile from "./tabs/UserProfile";
 import BattScreen from "./tabs/hubScreens/BattScreen";
 import MapScreen from "./tabs/hubScreens/MapScreen";
 import ForumsScreen from "./tabs/hubScreens/ForumScreen";
-import H2FScreen from "./tabs/hubScreens/H2FScreen";
-import ACFTScreen from "./tabs/hubScreens/H2FResourceScreens/ACFTScreen";
-import EasyPlateScreen from "./tabs/hubScreens/H2FResourceScreens/EasyPlate";
-import ModeratePlateScreen from "./tabs/hubScreens/H2FResourceScreens/ModeratePlate";
-import HardPlateScreen from "./tabs/hubScreens/H2FResourceScreens/HardPlate";
 import ResourcesScreen from "./tabs/hubScreens/ResourcesScreen";
 import HistoryScreen from "./tabs/hubScreens/HistoryScreen";
 import SchoolsScreen from "./tabs/hubScreens/SchoolsScreen";
@@ -124,6 +119,11 @@ import SupplimentAlt from "./tabs/rakfitScreens/Nutrition/SupplimentAlt";
 import CookingGuide from "./tabs/rakfitScreens/Nutrition/CookingGuide";
 import PMCS from "./tabs/rakfitScreens/Nutrition/PMCS";
 import MRE from "./tabs/rakfitScreens/Nutrition/MRE";
+import H2FScreen from "./tabs/rakfitScreens/H2FScreen";
+import ACFTScreen from "./tabs/rakfitScreens/H2FResourceScreens/ACFTScreen";
+import EasyPlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/EasyPlate";
+import ModeratePlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/ModeratePlate";
+import HardPlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/HardPlate";
 
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
@@ -185,11 +185,11 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen name="H2F" component={H2FScreen} />
       <HubStack.Screen name="ACFT" component={ACFTScreen} />
       <HubStack.Screen name="Plate For Easy Day" component={EasyPlateScreen} />
-      <HubStack.Screen name="Plate For Mod. Day" component={ModeratePlateScreen} />
+      <HubStack.Screen
+        name="Plate For Mod. Day"
+        component={ModeratePlateScreen}
+      />
       <HubStack.Screen name="Plate For Hard Day" component={HardPlateScreen} />
-
-
-
 
       <HubStack.Screen
         name="Calendar"
@@ -289,7 +289,10 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen name="Holiday Meal Plan" component={Holiday} />
       <HubStack.Screen name="Sample Meals" component={SampleMeals} />
       <HubStack.Screen name="Barracks Shopping List" component={ShoppingList} />
-      <HubStack.Screen name="Suppliment Alternatives" component={SupplimentAlt} />
+      <HubStack.Screen
+        name="Suppliment Alternatives"
+        component={SupplimentAlt}
+      />
       <HubStack.Screen name="Meal Tips" component={MealTips} />
       <HubStack.Screen name="Cooking Guide" component={CookingGuide} />
       <HubStack.Screen name="PMCS" component={PMCS} />
