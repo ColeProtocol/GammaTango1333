@@ -179,7 +179,7 @@ export default function RakFitScreen() {
             name="food-apple"
             text="Nutrition"
             buttonSize={50}
-            textSize={10}
+            textSize={12}
             iconSize={30}
             onPress={() => navigation.navigate("Nutrition")}
           />
@@ -187,17 +187,17 @@ export default function RakFitScreen() {
             name="food-fork-drink"
             text="DFAC"
             buttonSize={50}
-            textSize={10}
+            textSize={12}
             iconSize={30}
             onPress={() => navigation.navigate("DFAC")}
           />
           <SquareButton
             name="Placeholder"
-            text="Placeholder"
+            text="H2F"
             buttonSize={50}
-            textSize={8}
+            textSize={12}
             iconSize={30}
-            onPress={() => navigation.navigate("ConstructionScreen")}
+            onPress={() => navigation.navigate("H2F")}
           />
           <SquareButton
             name="Placeholder"
