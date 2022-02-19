@@ -103,6 +103,7 @@ import LogOut from "./tabs/LogOut";
 import SignUp from "./tabs/SignUp";
 import SplashScreen from "./tabs/SplashScreen";
 import iconConfig from "./assets/icomoon/iconConfig";
+import VideoSaveScreen from "./tabs/hubScreens/VideoSubmitScreen";
 //import UserProfile from "./tabs/UserProfile";
 
 const HubStack = createStackNavigator();
@@ -170,7 +171,11 @@ function HubStackScreen({ navigation }) {
           CalendarScreen
         }
       />
-
+      <HubStack.Screen
+        name = "VideoSave"
+        component = {VideoSaveScreen}
+        //options = ({headerShown: false})
+        />
       <HubStack.Screen
         name="Reading List"
         component={

@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+
 import {
   View,
   Text,
@@ -10,7 +11,6 @@ import {
 } from 'react-native';
 import { useIsFocused, useNavigation } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
-//import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 import {Camera} from 'expo-camera';
 import { Audio } from 'expo-av';
 import { Searchbar } from "react-native-paper";
@@ -132,6 +132,7 @@ export default function VideoScreen() {
     });
     if(!result.cancelled) {
       console.log(result);
+      navigation.navigate('VideoSave' , {source: result.uri});
       //pass into save component
     }
   }

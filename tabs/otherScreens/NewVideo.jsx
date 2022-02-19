@@ -17,36 +17,34 @@ import * as firebase from "firebase";
 
 const { width, height } = Dimensions.window;
 
-export default function NewVid({ route }) {
+export default function NewPost({ route }) {
   const navigation = useNavigation();
   const {
-    //topic_id,
+    topic_id,
     topic_title,
-    uri,
     currentEmail,
     currentUser,
     currentPicture,
-
   } = route.params;
 
-  const [vid, setvid] = useState("");
+  const [post, setPost] = useState("");
   const [title, setTitle] = useState("");
 
-  //console.log(topic_id, title, vid, currentEmail, currentUser, currentPicture);
+  //console.log(topic_id, title, post, currentEmail, currentUser, currentPicture);
 
   const handleSubmit = async () => {
     try {
       const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
       var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
       
-      //console.log(topic_id, title, vid, currentEmail, currentUser, currentPicture);
+      //console.log(topic_id, title, post, currentEmail, currentUser, currentPicture);
       Firebase.app()
         .firestore()
-        .collection("videos")
-        //.doc(topic_id)
-        //.collection("vids")
+        .collection("forums")
+        .doc(topic_id)
+        .collection("posts")
         .add({
-          body: vid,
+          body: post,
           displayName: currentUser,
           email: currentEmail,
           picture: currentPicture,
@@ -57,7 +55,7 @@ export default function NewVid({ route }) {
           dislikes: 0,
         })
         .then(() => {
-          alert("Your vid has been submitted!");
+          alert("Your post has been submitted!");
           navigation.goBack();
         })
         .catch((error) => {
@@ -83,13 +81,13 @@ export default function NewVid({ route }) {
           maxLength={300}
         />
         <TextInput
-          placeholder="Enter vid"
+          placeholder="Enter Post"
           style={styles.textInput}
           placeholderTextColor={Colors.gray}
           autoCorrect={false}
           autoCapitalize="none"
-          value={vid}
-          onChangeText={(val) => setvid(val)}
+          value={post}
+          onChangeText={(val) => setPost(val)}
           maxLength={300}
         />
 
@@ -99,7 +97,7 @@ export default function NewVid({ route }) {
             handleSubmit();
           }}
         >
-          <Text style={styles.buttonText}>vid</Text>
+          <Text style={styles.buttonText}>Post</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
