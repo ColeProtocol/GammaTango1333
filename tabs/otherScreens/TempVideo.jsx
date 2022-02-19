@@ -1,12 +1,11 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { Linking } from 'react-native';
 
 import Colors from "../../constants/Colors";
-import SquareButton from "../../components/SquareButton";
-import ExampleVideo from "../../tabs/otherScreens/TempVideo";
 
-export default function Creator1() {
+export default function TempVideo() {
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = React.useState("");
 
@@ -28,16 +27,14 @@ export default function Creator1() {
     },
   });
   return (
-    <View style={styles.container}>
-      <View style={[styles.buttonView, { paddingTop: 10 }]}>
-        <SquareButton
-          name="video"
-          text="ExampleVideo"
-          buttonSize={90}
-          textSize={13}
-          onPress={() => navigation.navigate("TempVideo")}
-        />
-      </View>
+    <View style={{ alignItems: 'center' }}>
+        <Text></Text>
+        <Text style={{color: 'blue', fontSize: 25}}
+              onPress={() => Linking.openURL('https://www.youtube.com/watch?v=K4TOrB7at0Y')}>
+          ExampleVideoLink
+        </Text>
+        <Text></Text>
+        <Text style={{fontSize: 20, textAlign: 'center'}}> This is a temporary hyperlink to an example video. </Text>
     </View>
   );
 }

@@ -40,7 +40,6 @@ import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
 import CreatorPageScreen from "./tabs/hubScreens/CreatorPageScreen";
 import Creator1 from "./tabs/hubScreens/Creator1";
-import Creator2 from "./tabs/hubScreens/Creator2";
 
 // battalion screens
 import BattUnitScreen from "./tabs/hubScreens/BattUnitScreen";
@@ -89,6 +88,7 @@ import NewComment from "./tabs/otherScreens/NewComment";
 import PostDetail from "./tabs/otherScreens/PostDetail";
 import PostReply from "./tabs/otherScreens/PostReply";
 import ConstructionScreen from "./tabs/otherScreens/Construction";
+import TempVideo from "./tabs/otherScreens/TempVideo";
 
 //chat screen
 //import LoginScreen from "./tabs/chatScreens/LoginScreen";
@@ -189,7 +189,7 @@ function HubStackScreen({ navigation }) {
         }
       />
       <HubStack.Screen name="Creator1" component={Creator1} />
-      <HubStack.Screen name="Creator2" component={Creator2} />
+      <HubStack.Screen name="TempVideo" component={TempVideo} />
 
       <HubStack.Screen name="Request a Feature" component={NewRequest} />
 

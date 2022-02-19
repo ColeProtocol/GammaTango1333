@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="490f8093-4baa-48d4-bd4d-d5f17d424a40" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../components/ExampleVideo.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../videos/ExampleVideo.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Navigation.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HubTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/HubTab.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hubScreens/Creator1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hubScreens/Creator1.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hubScreens/Creator2.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hubScreens/CreatorPageScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hubScreens/CreatorPageScreen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,5 +54,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

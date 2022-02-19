@@ -29,11 +29,6 @@ export default function BattScreen() {
   });
   return (
     <View style={styles.container}>
-      <Searchbar
-        placeholder="Search"
-        onChangeText={onChangeSearch}
-        value={searchQuery}
-      />
       <View style={[styles.buttonView, { paddingTop: 10 }]}>
         <SquareButton
           name="creator"
@@ -41,13 +36,6 @@ export default function BattScreen() {
           buttonSize={90}
           textSize={13}
           onPress={() => navigation.navigate("Creator1")}
-        />
-        <SquareButton
-          name="creator"
-          text="Creator2"
-          buttonSize={90}
-          textSize={13}
-          onPress={() => navigation.navigate("Creator2")}
         />
       </View>
     </View>
