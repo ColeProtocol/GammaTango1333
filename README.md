@@ -51,3 +51,15 @@ The RAK app is a catch-all application for members of the 187th Airborne Infantr
 * Calendar is currently "frozen"
 
 * Search bar is non-functional
+## v0.2.0
+### Features
+* Added video tab to RakFit.
+
+* Video playback now operational.
+### Bug Fixes 
+* Search bar now works in some cases.
+
+#### Known Issues
+* Search bar still doesn't fully work.
+
+* Videos can take an unreasonable amount of time to load.
