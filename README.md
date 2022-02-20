@@ -56,8 +56,14 @@ The RAK app is a catch-all application for members of the 187th Airborne Infantr
 * Added video tab to RakFit.
 
 * Video playback now operational.
+
+* Included widget icons on the RakFit page.
+
+* Wrote widget documentation.
 ### Bug Fixes 
 * Search bar now works in some cases.
+
+* Widgets now function on the RakFit page.
 
 #### Known Issues
 * Search bar still doesn't fully work.
