@@ -1,16 +1,22 @@
 import React from "react";
+import {useState, useCallback, useRef, styles} from "react";
 import { StyleSheet, Text, View } from "react-native";
-//import { Card } from "@ui-kitten/components";
-//import VideoPlanpmyer from "react-native-video-player";
-//import Video from "react-native-video";
-import YoutubePlayer from "react-native-youtube-iframe";
-
+import {Button, Alert} from 'react-native';
+import YoutubePlayer from 'react-native-youtube-iframe';
 const FitVideosScreen = () => {
+  const [playing, setPlaying] = useState(false);
+  const togglePlaying = () => {
+    setPlaying((prev) => !prev);
+  }
   return (
     <View>
-      <Text>Army videos</Text>
+      <YoutubePlayer
+        height={300}
+        play={playing}
+        videoId={'G4h51l7d3gA'}
+      />
+      <Button title={playing ? 'pause' : 'play'} onPress={togglePlaying} />
     </View>
   );
 };
-
 export default FitVideosScreen;
