@@ -9,6 +9,7 @@ import getData from "../../assets/Async/getData";
 import { ActionSheet, Root } from "native-base";
 import * as ImagePicker from "expo-image-picker";
 import Firebase from "../../constants/FireBaseDb";
+import FormData from 'form-data';
 
 export default function AccountAvatarList({ route }) {
   const navigation = useNavigation();
@@ -49,7 +50,7 @@ export default function AccountAvatarList({ route }) {
 
   const setNewAvatar = async (profile_picture_avatar) => {
     try {
-      console.log(email);
+      console.log(profile_picture_avatar);
       let { jwt } = await getData();
       axios
         .put(
@@ -87,25 +88,6 @@ export default function AccountAvatarList({ route }) {
     }
   };
 
-  const createFormData = (photo, body) => {
-    const data = new FormData();
-
-    data.append("photo", {
-      name: photo.fileName,
-      type: photo.type,
-      uri:
-        Platform.OS === "android"
-          ? photo.uri
-          : photo.uri.replace("file://", ""),
-    });
-
-    Object.keys(body).forEach((key) => {
-      data.append(key, body[key]);
-    });
-
-    return data;
-  };
-
   const launchCamera = async () => {
     //e.preventDefault();
 
@@ -115,26 +97,6 @@ export default function AccountAvatarList({ route }) {
       aspect: [4, 3],
       quality: 1,
     });
-    //console.log(files);
-
-    /*const formData = new FormData();
-    formData.append("files", result);
-
-    let { jwt } = await getData();
-    axios
-      .post("http://3.19.67.76:1337/upload", result.uri, {
-        headers: {
-          Authorization: `Bearer ${jwt}`,
-        },
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    console.log(formData);*/
 
     console.log(result);
 
@@ -150,31 +112,38 @@ export default function AccountAvatarList({ route }) {
       aspect: [4, 3],
       quality: 1,
     });
-
-    const formData = new FormData();
-    formData.append("files", result);
-
-    let { jwt } = await getData();
-    axios
-      .post("http://3.19.67.76:1337/upload", result.uri, {
-        headers: {
-          Authorization: `Bearer ${jwt}`,
-        },
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    //console.log(formData);
-
     console.log(result);
 
-    if (!result.cancelled) {
-      setImage(result.uri);
-    }
+      const uri = result.uri;
+      const CMSEndpoint = 'http://3.19.67.76:1337';
+      const formData = new FormData();
+      formData.append(
+        'files',
+        { uri, name: 'image.jpg', type: 'image/jpeg' },
+      );
+
+      try {
+        const response = await axios
+          .post(`${CMSEndpoint}/auth/local`, {
+            identifier: 'imageupload@rakapp.com',
+            password: 'imageuploader',
+          });
+        const { jwt } = response.data;
+
+        if (jwt) {
+          const imageResponse = await axios.post(`${CMSEndpoint}/upload`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+              Authorization: `Bearer ${jwt}`,
+            },
+          });
+          console.log(imageResponse.data);
+          setNewAvatar(imageResponse.data[0]);
+        }
+      } catch (error) {
+        console.log('File Upload Error', error);
+      }
+
   };
 
   const selectImages = () => {
@@ -206,6 +175,7 @@ export default function AccountAvatarList({ route }) {
       flexDirection: "row",
       justifyContent: "center",
       width: "100%",
+      paddingBottom: 15,
     },
     button: {
       backgroundColor: Colors.primary,
@@ -217,6 +187,7 @@ export default function AccountAvatarList({ route }) {
       shadowOffset: { width: 2, height: 2 },
       shadowColor: "black",
       shadowOpacity: 0.2,
+      padding: 6,
     },
     buttonText: {
       color: "white",
@@ -286,7 +257,7 @@ export default function AccountAvatarList({ route }) {
             }}
           >
             <Text style={styles.buttonText}>
-              Request your own profile picture
+              Upload your own profile picture
             </Text>
           </TouchableOpacity>
         </View>

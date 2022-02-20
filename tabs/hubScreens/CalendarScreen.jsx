@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import {
   View,
   Text,
@@ -78,67 +79,34 @@ export default function CalendarScreen() {
   });
 
   return (
-    <View style={styles.container}>
-          <View style={[styles.buttonView, { paddingTop: 10 }]}>
-        <SquareButton
-          name="book"
-          text="Book1"
-          buttonSize={90}
-          textSize={13}
-          onPress={() => navigation.navigate("Book1")}
+    <View style={{ paddingTop: 50, flex: 1 }}>
+        <Calendar
+          // Initially visible month. Default = Date()
+          current={'2022-01-01'}
+          // Minimum date that can be selected, dates before minDate will be grayed out. Default = undefined
+          minDate={'2012-05-10'}
+          // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
+          maxDate={'2022-05-30'}
+          // Handler which gets executed on day press. Default = undefined
+          onDayPress={day => {
+            console.log('selected day', day);
+          }}
+          // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
+          monthFormat={'yyyy MM'}
+          // Handler which gets executed when visible month changes in calendar. Default = undefined
+          onMonthChange={month => {
+            console.log('month changed', month);
+          }}
+          // Hide month navigation arrows. Default = false
+          hideArrows={true}
+          // Do not show days of other months in month page. Default = false
+          hideExtraDays={true}
+          // If hideArrows=false and hideExtraDays=false do not swich month when tapping on greyed out
+          // day from another month that is visible in calendar page. Default = false
+          disableMonthChange={true}
+          // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
+          firstDay={1}
         />
-      {/* <View style={styles.container2}>
-        <Image
-          source={require('../../assets/images/Torri.png')}
-          style={{ width: 30, height: 30, top: '-3%' }}
-        />
-        <Text style={styles.challengetext}>Rakkasan Challenge</Text>
-        <TouchableOpacity>
-          <Card>
-            <Image
-              source={require('../../assets/images/fitness/fitness2.jpg')}
-              style={{
-                width: screenWidth / 1.2,
-                height: screenWidth / 2.1,
-                borderRadius: 10,
-              }}
-            />
-          </Card>
-        </TouchableOpacity>
-
-        <Text style={styles.fitnesstext}>Fast Fitness</Text>
-        <View style={styles.scrollContainer}>
-          <Carousel
-            ref={carouselRef}
-            sliderWidth={screenWidth}
-            sliderHeight={screenWidth}
-            itemWidth={screenWidth - 60}
-            data={entries}
-            renderItem={renderItem}
-            hasParallaxImages
-            firstItem={1}
-          />
-        </View>
-        <View style={[styles.buttonView, { paddingTop: 10 }]}>
-          <SquareButton
-            name="food-apple"
-            text="Nutrition"
-            buttonSize={90}
-            textSize={13}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
-          />
-          <SquareButton
-            name="food-fork-drink"
-            text="DFAC"
-            buttonSize={90}
-            textSize={14}
-            iconSize={50}
-            // onPress={() => navigation.navigate("Program")}
-          />
-        </View>
-      </View> */}
-    </View>
-          </View>
+      </View>
   );
 }
