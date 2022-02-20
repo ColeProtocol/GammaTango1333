@@ -3,14 +3,15 @@ import { View, Image, FlatList, StyleSheet, Text } from "react-native";
 import RectButton from "../../components/RectButton";
 import { useNavigation } from "@react-navigation/native";
 import * as Firebase from "firebase";
+import VideoComponent from "../../components/VideoComponent"
 //import Firebase from "../../constants/FireBaseDb";
 
-export default function VidTopics({ navigation }) {
+export default function Videos({ navigation }) {
   const [topics, setTopics] = useState([]);
   useEffect(() => {
     const getTopics = async () => {
       try {        
-        const response = await Firebase.app().firestore().collection('videos').get();
+        const response = await Firebase.app().firestore().collection('Videos').get();
         //alert(response.data());
         const documents = [];
         response.forEach(doc => {
@@ -20,7 +21,7 @@ export default function VidTopics({ navigation }) {
         setTopics(documents.map(doc => {
           return {
             title: doc,
-            id: doc
+            id: doc,
           }
         }));
 
@@ -31,7 +32,7 @@ export default function VidTopics({ navigation }) {
     getTopics();
     
   }, [])
-
+ 
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -45,6 +46,23 @@ export default function VidTopics({ navigation }) {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.buttonView}>
+            <View>
+              <VideoComponent
+                //topic_id={topic_id}
+                id={item.id}
+                //picture={item.picture}
+                
+                username={item.displayName}
+                videoURI = {item.videoURI}
+                title={item.title}
+                content={item.body}
+                email={item.email}
+                date={item.timestamp}
+                likes={item.likes}
+                dislikes={item.dislikes}
+                //date={moment(item.created_at).format("Do MMM YY, HH:mm:ss")}
+              />
+            </View>
             <RectButton
               text={item.title}
               onPress={() => navigation.navigate("Videos", { topic_id: item.id, topic_title: item.title })}

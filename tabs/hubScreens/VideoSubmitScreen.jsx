@@ -141,8 +141,9 @@ export default function VideoSaveScreen(props) {
       var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
       
       //console.log( title, props.route.params.source, currentEmail, currentUser, currentPicture);
-      console.log( title, props.route.params.source, currentEmail, currentUser, currentPicture);
-      firebase.app()
+      console.log( title, props.route.params.source, currentEmail, currentUser,  title, description, date );
+      navigation.navigate("VidPosts")
+      /*firebase.app()
         .firestore()
         .collection("Videos")
         //.doc(topic_id)
@@ -166,7 +167,7 @@ export default function VideoSaveScreen(props) {
         })
         .catch((error) => {
           console.log("Error adding document: ", error);
-        });
+        });*/
     } catch (error) {
       console.log(error);
     }

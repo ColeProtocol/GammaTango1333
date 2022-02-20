@@ -14,9 +14,9 @@ import{ Video } from 'expo-av'
   Feather as FIcon,
 } from "@expo/vector-icons";*/
 
-export default function Video({
-  topic_id,
-  id,
+export default function VideoComponent({
+  //topic_id,
+  //id,
   username,
   title,
   content,
@@ -60,9 +60,9 @@ export default function Video({
     try {
       Firebase.app()
         .firestore()
-        .collection("trainings")
-        .doc(topic_id)
-        .collection("videos")
+        .collection("Videos")
+        //.doc(topic_id)
+        //.collection("videos")
         .doc(id)
         .update({
           likes: firebase.firestore.FieldValue.increment(1),
@@ -83,15 +83,15 @@ export default function Video({
       console.log(error);
     }
   };
-  
+
 
   function undoLike(currUserEmail) {
     try {
       Firebase.app()
         .firestore()
-        .collection("trainings")
-        .doc(topic_id)
-        .collection("videos")
+        //.collection("trainings")
+        //.doc(topic_id)
+        .collection("Videos")
         .doc(id)
         .update({
           likes: firebase.firestore.FieldValue.increment(-1),
@@ -117,9 +117,9 @@ export default function Video({
     try {
       Firebase.app()
         .firestore()
-        .collection("trainings")
-        .doc(topic_id)
-        .collection("videos")
+        //.collection("trainings")
+        //.doc(topic_id)
+        .collection("Videos")
         .doc(id)
         .update({
           dislikes: firebase.firestore.FieldValue.increment(1),
@@ -247,7 +247,15 @@ export default function Video({
 
     getData();
   }
-
+  console.log(username,
+  title,
+  content,
+  videoURI,
+  date,
+  email,
+  picture,
+  likes,
+  dislikes,);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -255,7 +263,7 @@ export default function Video({
           source={{ uri: picture }}
           style={{ width: 50, height: 50, borderRadius: 400 / 2, margin: 7 }}
         />
-
+        
         <View style={styles.user}>
           <Text
             style={styles.username}
@@ -273,8 +281,8 @@ export default function Video({
 
       <View style={styles.content}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.content_text}>{content}</Text>
-        <Video style = {styles.container} source = {{ uri : videoURI}}/>
+        
+         <Video  style={{ width: 300, height: 300, borderRadius: 0, margin: 7 }} source= {{uri: content}}/>
         <View style={{flexDirection:'row'}}>
           <Text>      
             <IconButton

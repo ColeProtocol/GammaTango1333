@@ -4,21 +4,21 @@ import moment from "moment";
 import Colors from "../../constants/Colors";
 import { useIsFocused } from "@react-navigation/native";
 import Post from "../../components/Post";
-import Video from "../../components/Video";
+import VideoComponent from "../../components/VideoComponent";
 import Button from "react-native-button";
 import * as Firebase from "firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function VidPosts({ route, navigation }) {
-  const topic_id = route.params.topic_id;
-  const topic_title = route.params.topic_title;
+  //const topic_id = route.params.topic_id;
+  //const topic_title = route.params.topic_title;
 
   function unsubscribe() {
-    Firebase.app().firestore().collection("trainings").doc(topic_id).collection("videos")
+    Firebase.app().firestore().collection("Videos")//.doc(topic_id).collection("videos")
     .orderBy("timestamp", "desc").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
-          topic: topic_id,
+          //topic: topic_id,
           id: doc.id,
           uri : doc.data().uri,
           strapiID: doc.data().id,
@@ -28,6 +28,7 @@ export default function VidPosts({ route, navigation }) {
           email: doc.data().email,
           created_at: "7/29/2021",
           picture: doc.data().picture,
+          videoURI : doc.data().videoURI,
           //timestamp: doc.data().timestamp.toDate().toString(),
           timestamp: doc.data().timestamp,
           likes: doc.data().likes,
@@ -40,7 +41,8 @@ export default function VidPosts({ route, navigation }) {
   const [posts, setPosts] = useState(() => unsubscribe());
 
   const _handleOnPress = (post) => {
-    navigation.navigate("Comments", { post });
+    
+    navigation.navigate("VidPlay", { post });
     //console.log(post)
   };
 
@@ -70,14 +72,14 @@ export default function VidPosts({ route, navigation }) {
         .doc(json.user.email)
         .get()
         .then((docSnapshot) => {
-          navigation.navigate("New Post", {
-            topic_id: topic_id,
-            topic_title: topic_title,
+          navigation.navigate("VideoScreen"/*, {
+            //topic_id: topic_id,
+            //topic_title: topic_title,
             uri: uri,
             currentUser: json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion'],
             currentEmail: json.user.email,
             currentPicture: docSnapshot.get("picture"),
-          });
+          }*/);
         });
     };
 
@@ -87,7 +89,7 @@ export default function VidPosts({ route, navigation }) {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.topicTitle}>{topic_title}</Text>
+        <Text style={styles.topicTitle}>Videos</Text>
       </View>
       <FlatList
         data={posts}
@@ -98,19 +100,20 @@ export default function VidPosts({ route, navigation }) {
         renderItem={({ item }) => (
           <TouchableHighlight
             style={styles.item}
-            onPress={() => {
-              _handleOnPress(item);
-            }}
+            onPress={() => navigation.navigate('VidPlay', {videoURI : item.body})}/*{
+
+              //_handleOnPress(item.videoURI);
+            }}*/
           >
             <View>
-              <Post
-                topic_id={topic_id}
+              <VideoComponent
+                //topic_id={topic_id}
                 id={item.id}
-                picture={item.picture}
+                //picture={item.picture}
                 username={item.displayName}
+                VideoURI = {item.VideoURI}
                 title={item.title}
                 content={item.body}
-                uri={item.uri}
                 email={item.email}
                 date={item.timestamp}
                 likes={item.likes}
@@ -137,9 +140,9 @@ export default function VidPosts({ route, navigation }) {
             fontSize: 20,
             fontWeight: "bold",
           }}
-          onPress={() => newPost()}
+          onPress={() => newVideo()}
         >
-          Submit New Post
+          Submit New Video
         </Button>
       </View>
     </View>

@@ -35,7 +35,8 @@ import InProcessing from "./tabs/hubScreens/InProcessing";
 import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
 import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
-import CalendarScreen from "./tabs/hubScreens/VideoScreen";
+import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
+import VideoScreen from "./tabs/hubScreens/VideoScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
@@ -74,6 +75,7 @@ import CmdModal from "./tabs/CmdModal";
 
 // other screens
 import WelcomeScreen from "./tabs/otherScreens/WelcomeScreen";
+import VidPlay from "./tabs/otherScreens/VidPlay";
 import WelcomeVideo from "./tabs/otherScreens/WelcomeVideo";
 import CheckList from "./tabs/otherScreens/CheckList";
 import NewsScreen from "./tabs/otherScreens/NewsScreen";
@@ -104,6 +106,8 @@ import SignUp from "./tabs/SignUp";
 import SplashScreen from "./tabs/SplashScreen";
 import iconConfig from "./assets/icomoon/iconConfig";
 import VideoSaveScreen from "./tabs/hubScreens/VideoSubmitScreen";
+import Videos from "./tabs/otherScreens/Videos";
+import VidPosts from "./tabs/otherScreens/VidPosts";
 //import UserProfile from "./tabs/UserProfile";
 
 const HubStack = createStackNavigator();
@@ -160,7 +164,8 @@ function HubStackScreen({ navigation }) {
         name="RAKFIT"
         component={
           // RakFitScreen
-          ConstructionScreen
+          //ConstructionScreen
+          VidPosts
         }
       />
 
@@ -172,8 +177,32 @@ function HubStackScreen({ navigation }) {
         }
       />
       <HubStack.Screen
+        name="VideoScreen"
+        component={
+          // RakFitScreen
+          VideoScreen
+        }
+      />
+      <HubStack.Screen
+        name="VidPlay"
+        component={
+          // RakFitScreen
+          VidPlay
+        }
+      />
+      <HubStack.Screen
         name = "VideoSave"
         component = {VideoSaveScreen}
+        //options = ({headerShown: false})
+        />
+      <HubStack.Screen
+        name = "Videos"
+        component = {Videos}
+        //options = ({headerShown: false})
+        />
+      <HubStack.Screen
+        name = "VidPosts"
+        component = {VidPosts}
         //options = ({headerShown: false})
         />
       <HubStack.Screen
