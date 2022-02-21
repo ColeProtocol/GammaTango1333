@@ -28,6 +28,21 @@ git checkout main & git fetch - p origin & git merge origin/main & git checkout 
 * Calendar is currently "frozen"
 * Search bar is non-functional
 
+## v0.2.0
+### Features
+* Created a Content Creator page that allows video uploads and access from Google Firebase
+
+* Added name assignments and ability to comment on video
+
+
+* Created a page that posts embedded YouTube videos 
+
+### Bug Fixes 
+* Added data/videos temporarily to the Google Firebase in order for the videos of the Content Creator page to work as data is only taken from the Google Firebase.
+
+#### Known Issues
+* Search feature is still not fully functional
+
 # RAK App Summary - JIF 1321
 The RAK app is a catch-all application for members of the 187th Airborne Infantry Regiment of the U.S. Army, also known as the Rakka-sans, derived from the Japanese word for “parachute”. The app is intended to provide members of the Rakkasans with a single hub for key activities and information around base; its key functionality is to provide easy access to military documents (e.g. onboarding documents), but the full scope of the app includes a wide variety of features, including maps of base, events calendars, messaging, fitness instructions, and more. 
 
