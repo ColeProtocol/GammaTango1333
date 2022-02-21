@@ -1,3 +1,5 @@
+package-lock.json
+
 # Expo
 .expo/*
 __generated__
