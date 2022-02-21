@@ -122,6 +122,15 @@ export default function HubTab() {
             //onPress={() => test()}
             hubIcon={true}
           />
+           <SquareButton
+            name="Video Posts"
+            text="Videos"
+            buttonSize={75}
+            textSize={11}
+            onPress={() => navigation.navigate("VidPosts")}
+            //onPress={() => test()}
+            hubIcon={true}
+          />
         </View>
         <View style={[styles.buttonView]}>
           <SquareButton

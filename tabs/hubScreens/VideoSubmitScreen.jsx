@@ -142,8 +142,8 @@ export default function VideoSaveScreen(props) {
       
       //console.log( title, props.route.params.source, currentEmail, currentUser, currentPicture);
       console.log( title, props.route.params.source, currentEmail, currentUser,  title, description, date );
-      navigation.navigate("VidPosts")
-      /*firebase.app()
+      //
+      firebase.app()
         .firestore()
         .collection("Videos")
         //.doc(topic_id)
@@ -167,10 +167,12 @@ export default function VideoSaveScreen(props) {
         })
         .catch((error) => {
           console.log("Error adding document: ", error);
-        });*/
+        });
+        navigation.navigate("VidPosts");
     } catch (error) {
       console.log(error);
     }
+    
   };
 
 
