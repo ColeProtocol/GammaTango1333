@@ -17,7 +17,7 @@ console.log(props);
   const navigation = useNavigation();
   function unsubscribe() {
     Firebase.app().firestore().collection("calendar").doc(creator).collection(props.route.params.date.dateString)
-    .orderBy("timestamp").onSnapshot((snapshot) =>
+    .orderBy("startTime").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
           //topic: topic_id,
