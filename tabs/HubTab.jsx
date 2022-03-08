@@ -127,7 +127,7 @@ export default function HubTab() {
             text="Videos"
             buttonSize={75}
             textSize={11}
-            onPress={() => navigation.navigate("VidPosts")}
+            onPress={() => navigation.navigate("VidTopics")}
             //onPress={() => test()}
             hubIcon={true}
           />

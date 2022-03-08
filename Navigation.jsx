@@ -36,6 +36,7 @@ import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
 import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
 import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
+
 import VideoScreen from "./tabs/hubScreens/VideoScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
@@ -65,7 +66,8 @@ import DivisionHistoryScreen from "./tabs/hubScreens/DivisionHistoryScreen";
 import DMOR_HMOR_Screen from "./tabs/hubScreens/DMOR_HMOR_Screen";
 import The38DEHistoryScreen from "./tabs/hubScreens/The38DEHistoryScreen";
 import HistoryDetailScreen from "./tabs/hubScreens/HistoryDetailScreen";
-
+import SchedAdd from "./tabs/hubScreens/SchedSubmitScreen";
+import DayEvents from "./tabs/otherScreens/DayEvents";
 // cmd screens
 import OffLimitsScreen from "./tabs/cmdScreens/OffLimitsScreen";
 import PolicyLettersScreen from "./tabs/cmdScreens/PolicyLettersScreen";
@@ -108,6 +110,7 @@ import iconConfig from "./assets/icomoon/iconConfig";
 import VideoSaveScreen from "./tabs/hubScreens/VideoSubmitScreen";
 import Videos from "./tabs/otherScreens/Videos";
 import VidPosts from "./tabs/otherScreens/VidPosts";
+import VidTopics from "./tabs/otherScreens/VidTopics";
 //import UserProfile from "./tabs/UserProfile";
 
 const HubStack = createStackNavigator();
@@ -163,17 +166,31 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="RAKFIT"
         component={
-          // RakFitScreen
+           RakFitScreen
           //ConstructionScreen
-          VidPosts
+          //VidPosts
         }
       />
-
+       
       <HubStack.Screen
         name="Calendar"
         component={
           // RakFitScreen
           CalendarScreen
+        }
+      />
+      <HubStack.Screen
+        name="SchedSubmitScreen"
+        component={
+          // RakFitScreen
+          SchedAdd
+        }
+      />
+      <HubStack.Screen
+        name="DayEvents"
+        component={
+          // RakFitScreen
+          DayEvents
         }
       />
       <HubStack.Screen
@@ -203,6 +220,11 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name = "VidPosts"
         component = {VidPosts}
+        //options = ({headerShown: false})
+        />
+        <HubStack.Screen
+        name = "VidTopics"
+        component = {VidTopics}
         //options = ({headerShown: false})
         />
       <HubStack.Screen

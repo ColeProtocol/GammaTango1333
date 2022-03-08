@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import moment from 'moment';
 import Post from "../../components/Post";
 import Comment from "../../components/Comment";
-import * as Firebase from "firebase";
+import firebase, * as Firebase from "firebase";
 import Button from "react-native-button";
 import Colors from "../../constants/Colors";
 import{ Video } from 'expo-av'
@@ -16,7 +16,9 @@ export default function VidPlay({ route}) {
           source = {{uri: props.route.params.source}}
         />*/
   console.log(route)
-  console.log(route.params.videoURI)
+  console.log(route.params.content)
+  //firebase.database().ref('Videos/${' + json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion'] + '/${' +title + "" + time+/*+uuid()*/ +'}}'))
+  
   return (
     <View style = {styles.container}>
         
@@ -24,7 +26,7 @@ export default function VidPlay({ route}) {
           <Video 
             style={styles.mediaPreview}
             shouldPlay={true}
-            source = {{uri: route.params.videoURI}}
+            source = {{uri: route.params.content}}
           />
       </View>
     </View>

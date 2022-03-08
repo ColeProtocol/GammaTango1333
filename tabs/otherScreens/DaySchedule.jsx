@@ -9,13 +9,12 @@ import Button from "react-native-button";
 import * as Firebase from "firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function VidPosts({ route, navigation }) {
+export default function DaySchedule(route) {
   //const topic_id = route.params.topic_id;
   //const topic_title = route.params.topic_title;
-  const creator= route.params.creator;
 
   function unsubscribe() {
-    Firebase.app().firestore().collection("Videos").doc(creator).collection("Videos")
+    Firebase.app().firestore().collection("Videos")//.doc(topic_id).collection("videos")
     .orderBy("timestamp", "desc").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
@@ -62,31 +61,7 @@ export default function VidPosts({ route, navigation }) {
 
   function newVideo() {
     navigation.navigate("VideoScreen")
-   /* const getData = async () => {
-      const val = await AsyncStorage.getItem("@user_data").catch(console.log);
-      const json = JSON.parse(val);
-      console.log(json.user.email);
-      console.log(json.user.username);
-      console.log(json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);
-
-      Firebase.app()
-        .firestore()
-        .collection("users")
-        .doc(json.user.email)
-        .get()
-        .then((docSnapshot) => {
-          navigation.navigate("VideoScreen", {
-            //topic_id: topic_id,
-            //topic_title: topic_title,
-            uri: uri,
-            currentUser: json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion'],
-            currentEmail: json.user.email,
-            currentPicture: docSnapshot.get("picture"),
-          });
-        });
-    };
-
-    getData();*/
+   
   }
     console.log(posts);
   return (
@@ -103,16 +78,13 @@ export default function VidPosts({ route, navigation }) {
         renderItem={({ item }) => (
           <TouchableHighlight
             style={styles.item}
-            onPress={() => navigation.navigate('VidPlay', {content: item.body, date : item.date, title: item.title, username : item.displayName})}/*{
-
-              //_handleOnPress(item.videoURI);
-            }}*/
+            onPress={() => navigation.navigate('VidPlay', {content: item.body, date : item.date, title: item.title, username : item.displayName})}
           >
             <View>
               <VideoComponent
-                //topic_id={topic_id}
+               
                 id={item.id}
-                //picture={item.picture}
+                
                 username={item.displayName}
                 VideoURI = {item.VideoURI}
                 title={item.title}

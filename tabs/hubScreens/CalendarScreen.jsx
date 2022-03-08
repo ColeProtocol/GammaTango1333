@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as firebase from "firebase";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import {
   View,
@@ -77,6 +79,36 @@ export default function CalendarScreen() {
       left: '5%',
     },
   });
+  function selectDate(day) {
+    const getData = async () => {
+      const val = await AsyncStorage.getItem("@user_data").catch(console.log);
+      const json = await JSON.parse(val);
+      /*console.log(json)
+      console.log(json.user.email);
+      console.log(json.user.username);
+      console.log(json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);*/
+      
+       firebase.app()
+        .firestore()
+        .collection("users")
+        .doc(json.user.email)
+        .get()
+        .then((docSnapshot) => {
+          SelectedDate( day, json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);
+
+        });
+    };
+
+    getData();
+  }
+
+  function SelectedDate(day, creator){
+  console.log(creator + " creator")
+
+  navigation.navigate('DayEvents', { date: day, creater : creator});
+  }
+  
+  
 
   return (
     <View style={{ paddingTop: 50, flex: 1 }}>
@@ -90,6 +122,8 @@ export default function CalendarScreen() {
           // Handler which gets executed on day press. Default = undefined
           onDayPress={day => {
             console.log('selected day', day);
+            //navigation.navigate('SchedSubmitScreen', {date : day})
+                selectDate(day);
           }}
           // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
           monthFormat={'yyyy MM'}

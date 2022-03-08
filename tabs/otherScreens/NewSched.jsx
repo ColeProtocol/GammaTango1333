@@ -17,15 +17,16 @@ import * as firebase from "firebase";
 
 const { width, height } = Dimensions.window;
 
-export default function NewVid({ route }) {
+export default function NewSched({ route }) {
   const navigation = useNavigation();
   const {
     //topic_id,
     topic_title,
-    uri,
     currentEmail,
     currentUser,
     currentPicture,
+    Date,
+
 
   } = route.params;
 
@@ -48,10 +49,10 @@ export default function NewVid({ route }) {
         //.collection("vids")*/
         //new
         .collection("UserInfo")
-        .doc(currentUser)
-        .collection("vids")
+        .doc(Date)
+        .collection("Scheduled")
         .add({
-          body: vid,
+          body: content,
           displayName: currentUser,
           email: currentEmail,
           picture: currentPicture,

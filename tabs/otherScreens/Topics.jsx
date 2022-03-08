@@ -12,8 +12,10 @@ export default function Topics({ navigation }) {
       try {        
         const response = await Firebase.app().firestore().collection('forums').get();
         //alert(response.data());
+        console.log(response)
         const documents = [];
         response.forEach(doc => {
+          console.log(doc.id)
           documents.push(doc.id);
         });
         

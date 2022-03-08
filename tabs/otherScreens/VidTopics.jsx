@@ -8,18 +8,24 @@ import * as Firebase from "firebase";
 export default function VidTopics({ navigation }) {
   const [topics, setTopics] = useState([]);
   useEffect(() => {
+    console.log("bye");
     const getTopics = async () => {
       try {        
-        const response = await Firebase.app().firestore().collection('trainings').get();
+        const response = await Firebase.app().firestore().collection('Videos').get();
+        //console.log(response.data);
         //alert(response.data());
         const documents = [];
+        //console.log(response.data())
         response.forEach(doc => {
+          console.log("foo");
+          
           documents.push(doc.id);
+          console.log(doc.id);
         });
         
         setTopics(documents.map(doc => {
           return {
-            title: doc,
+            user: doc,
             id: doc
           }
         }));
@@ -31,7 +37,7 @@ export default function VidTopics({ navigation }) {
     getTopics();
     
   }, [])
-
+  
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -46,8 +52,8 @@ export default function VidTopics({ navigation }) {
         renderItem={({ item }) => (
           <View style={styles.buttonView}>
             <RectButton
-              text={item.title}
-              onPress={() => navigation.navigate("Videos", { topic_id: item.id, topic_title: item.title })}
+              text={item.id}
+              onPress={() => navigation.navigate("VidPosts", { creator: item.id })}//topic_id: item.id, topic_title: item.title
             />
           </View>
         )}
