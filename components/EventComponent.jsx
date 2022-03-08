@@ -27,8 +27,8 @@ export default function EventComponent({
   const navigation = useNavigation();
   const starti = new Date();
   console.log("this is time " + startTime.seconds)
-  const start = new Date(startTime.seconds);
-  const end = new Date(endTime.seconds)
+  const start = new Date(startTime.seconds*1000);
+  const end = new Date(endTime.seconds*1000)
 
 
   
