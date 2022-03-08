@@ -38,15 +38,10 @@ export default function NewVid({ route }) {
     try {
       const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
       var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
-      //currently storing in collection 'videos raw. might want to just store in a users, then with the doc set to currentuser or if each user has an id use that, then add a subcollection of videos'
-      //console.log(topic_id, title, vid, currentEmail, currentUser, currentPicture);
+
       Firebase.app()
         .firestore()
-        
-        /*.collection("videos") //old
-        //.doc(topic_id)
-        //.collection("vids")*/
-        //new
+
         .collection("UserInfo")
         .doc(currentUser)
         .collection("vids")
@@ -56,7 +51,6 @@ export default function NewVid({ route }) {
           email: currentEmail,
           picture: currentPicture,
           title: title,
-          //timestamp: firebase.firestore.Timestamp.now(),
           timestamp: date,
           likes: 0,
           dislikes: 0,

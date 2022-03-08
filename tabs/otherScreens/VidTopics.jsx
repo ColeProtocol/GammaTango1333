@@ -12,8 +12,7 @@ export default function VidTopics({ navigation }) {
     const getTopics = async () => {
       try {        
         const response = await Firebase.app().firestore().collection('Videos').get();
-        //console.log(response.data);
-        //alert(response.data());
+
         const documents = [];
         //console.log(response.data())
         response.forEach(doc => {

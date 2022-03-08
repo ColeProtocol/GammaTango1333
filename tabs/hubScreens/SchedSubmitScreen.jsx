@@ -24,11 +24,10 @@ import { TaskManager } from 'expo';
 import uuid from 'uuid-random'
 import { NewLineKind } from 'typescript';
 
-//import {vidPost} from './../otherScreens/vidPost';
+
 
 export default function SchedSubmitScreen(props) {
     console.log(props);
-  //console.log(props.route.params.date.dateString);
   const navigation = useNavigation();
   const [description, setDescription] = useState('');
   const [title, setTitle] = useState(''); 
@@ -36,10 +35,9 @@ export default function SchedSubmitScreen(props) {
   const [time, setTime] = useState('');
   const [RandomUuid, setRandomUuid] = useState('');
   const [user, setUser] = useState('');
-  //console.log(props)
 
-  const [date1, setDate1] = useState(/*new Date(*/new Date(props.route.params.date.timestamp)/*.setHours(24))*/)//new Date(1598051730000));
-  const [date2, setDate2] = useState(/*new Date(*/new Date(props.route.params.date.timestamp)/*.setHours(24))*/)//new Date(1598051730000));
+  const [date1, setDate1] = useState(new Date(props.route.params.date.timestamp));
+  const [date2, setDate2] = useState(new Date(props.route.params.date.timestamp));
   const [mode, setMode] = useState('time');//time mode
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -48,7 +46,7 @@ export default function SchedSubmitScreen(props) {
   console.log("date 1 " + date1)
   console.log("date 2 " + date2)
   const onChange1 = (event, selectedTime) => {
-    //const currentDate = selectedTime || date1;
+    //const currentDate = selectedTime || date1;//original info. don't think its wrong so wont delete.'
     const currentDate = new Date(selectedTime.setDate(date2.getDate()))//new Date(new Date(props.route.params.date.timestamp).setHours(selectedTime.getHours(), selectedTime.getMinutes(), selectedTime.getSeconds()))//moment(selectedTime).add(date1);
     setShow1(Platform.OS === 'ios');
     setDate1(currentDate);
@@ -212,13 +210,7 @@ export default function SchedSubmitScreen(props) {
         .collection("calendar")
         .doc(currentUser).set({id: currentUser});
         
-      /*await firebase.app()
-        .firestore()
-        .collection("userinfo")
-        .doc(currentUser)
-        .collection("calendar")
-        .doc(props.route.params.date.dateString).set({id: props.route.params.date.dateString});*/
-        //creates a spot in firestore for the information, creates a collection of calendars with a collection of docs for a given day and each one has a collection of scheduled events
+     
         console.log("datestring " );
         console.log( props.route.params.date.dateString);
       await firebase.app()
@@ -251,7 +243,6 @@ export default function SchedSubmitScreen(props) {
            setRequestRunning(false);
         });
 
-        //navigation.navigate("VidPosts");
       
         
     } catch (error) {

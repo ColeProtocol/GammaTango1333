@@ -6,14 +6,7 @@ import firebase, * as Firebase from "firebase";
 import { IconButton, Colors } from 'react-native-paper';
 import{ Video } from 'expo-av'
 import moment from 'react-moment';
-//import Icon from "react-native-vector-icons/FontAwesome";
-/*import {
-  FontAwesome as FontIcon,
-  MaterialIcons as MatIcon,
-  AntDesign as AntIcon,
-  Entypo as EnIcon,
-  Feather as FIcon,
-} from "@expo/vector-icons";*/
+
 
 export default function EventComponent({
     body,
@@ -31,10 +24,7 @@ export default function EventComponent({
   const end = new Date(endTime.seconds*1000)
 
 
-  
-  //let date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(start)
-  //const star = moment(startTime,"hh:mm A")
- //const endi = moment(endTime,"hh:mm A");
+
  console.log(startTime)
   console.log(
     body,

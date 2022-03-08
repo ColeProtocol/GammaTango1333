@@ -10,8 +10,7 @@ import * as Firebase from "firebase";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function VidPosts({ route, navigation }) {
-  //const topic_id = route.params.topic_id;
-  //const topic_title = route.params.topic_title;
+
   const creator= route.params.creator;
 
   function unsubscribe() {
@@ -19,7 +18,7 @@ export default function VidPosts({ route, navigation }) {
     .orderBy("timestamp", "desc").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
-          //topic: topic_id,
+
           id: doc.id,
           uri : doc.data().uri,
           strapiID: doc.data().id,
@@ -31,7 +30,7 @@ export default function VidPosts({ route, navigation }) {
           created_at: "7/29/2021",
           picture: doc.data().picture,
           videoURI : doc.data().videoURI,
-          //timestamp: doc.data().timestamp.toDate().toString(),
+
           timestamp: doc.data().timestamp,
           likes: doc.data().likes,
           dislikes: doc.data().dislikes,
@@ -45,7 +44,7 @@ export default function VidPosts({ route, navigation }) {
   const _handleOnPress = (post) => {
     
     navigation.navigate("VidPlay", { post });
-    //console.log(post)
+
   };
 
   const _listEmptyComponent = () => {
@@ -62,31 +61,7 @@ export default function VidPosts({ route, navigation }) {
 
   function newVideo() {
     navigation.navigate("VideoScreen")
-   /* const getData = async () => {
-      const val = await AsyncStorage.getItem("@user_data").catch(console.log);
-      const json = JSON.parse(val);
-      console.log(json.user.email);
-      console.log(json.user.username);
-      console.log(json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);
-
-      Firebase.app()
-        .firestore()
-        .collection("users")
-        .doc(json.user.email)
-        .get()
-        .then((docSnapshot) => {
-          navigation.navigate("VideoScreen", {
-            //topic_id: topic_id,
-            //topic_title: topic_title,
-            uri: uri,
-            currentUser: json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion'],
-            currentEmail: json.user.email,
-            currentPicture: docSnapshot.get("picture"),
-          });
-        });
-    };
-
-    getData();*/
+   
   }
     console.log(posts);
   return (

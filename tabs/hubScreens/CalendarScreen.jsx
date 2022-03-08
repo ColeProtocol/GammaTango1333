@@ -83,10 +83,7 @@ export default function CalendarScreen() {
     const getData = async () => {
       const val = await AsyncStorage.getItem("@user_data").catch(console.log);
       const json = await JSON.parse(val);
-      /*console.log(json)
-      console.log(json.user.email);
-      console.log(json.user.username);
-      console.log(json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);*/
+
       
        firebase.app()
         .firestore()

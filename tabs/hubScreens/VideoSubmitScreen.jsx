@@ -105,17 +105,15 @@ export default function VideoSaveScreen(props) {
       fontSize: 16
     }
      });
-     //const dispatch = useDispatch();
+
  const handleSavePost = ()=> {
     setRequestRunning(true)
-    //dispatch(createPost(title, description, props.route.params.source))
+
     createPost(props.route.params.source)
      .then(setRequestRunning(false))
      .then(console.log("video was posted?"))
      .catch(() => reject())
-     
-      //.then(() => navigation.dispatch(StackActions.popToTop()))
-      //.catch(() => setRequestRunning(false))
+
   }
   console.log(props.route.params.source)
   const saveMediaToStorage = (media, path) => new Promise((resolve, reject) => {
@@ -125,7 +123,7 @@ export default function VideoSaveScreen(props) {
     .then(blob => fileRef.put(blob))
     .then(task => task.ref().getDownloadURL())
     .then(downloadUrl => resolve(downloadUrl))
-    //.then(console.log(downloadUrl))
+
     .catch(() => reject())
   });
   const  createPost = (media) => new Promise((resolve, reject) => {
@@ -139,17 +137,14 @@ export default function VideoSaveScreen(props) {
           VideoURI: downloadUrl,
           displayName: currentUser,
           email: currentEmail,
-          //picture: currentPicture,
+
           title: title,
           description: description,
-          //timestamp: firebase.firestore.Timestamp.now(),
           timestamp: date,
           likes: 0,
           dislikes: 0,
       })
       .then (() => resolve())
-      //.then(() => navigation.goBack())
-      //.then(() => setRequestRunning(false))
       .catch(() => reject())
     }).catch(() => reject())
   });
@@ -170,15 +165,6 @@ export default function VideoSaveScreen(props) {
         .get()
         .then((docSnapshot) => {
           handleSubmit( json.user.email, json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion'], docSnapshot.get("picture"));
-         /* navigation.navigate("New Video", {
-            //topic_id: topic_id,
-            topic_title: title,
-            topic_description: description,
-            uri: props.route.params.source,
-            currentUser: json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion'],
-            currentEmail: json.user.email,
-            currentPicture: docSnapshot.get("picture"),
-          });*/
         });
     };
 
@@ -191,7 +177,7 @@ export default function VideoSaveScreen(props) {
     const val = await AsyncStorage.getItem("@user_data").catch(console.log);
       const json = JSON.parse(val);
     const ref = await firebase.storage()
-      .ref('Videos/' +user +'/' +title + "" + RandomUuid )//json.user['name']  +uuid())//'props.route.params.source' + uuid())//'Videos/${' + firebase.auth().currentUser.uid + '/${' +uuid() +'}}')
+      .ref('Videos/' +user +'/' +title + "" + RandomUuid )
       .put(blob);
 
     const url = ref.getDownloadURL();
@@ -200,7 +186,6 @@ export default function VideoSaveScreen(props) {
 
 }
 const uploadImage = async(imageResp) => {
-  //const response = await fetch(imageUri);
   const blob = await imageResp.blob();
   var ref =   firebase.storage().ref().child("Videos/" + user + RandomUuid);
   return ref.put(blob);
@@ -224,10 +209,6 @@ const uploadImage = async(imageResp) => {
         console.log("blobs its gone")
       }
       console.log("user is " + currentUser);
-      //while(user == "") {
-      //setUser(json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);
-      //}
-      //await setRandomUuid(uuid());
       console.log(RandomUuid + "uuid")
       const fileRefs = firebase.storage().ref().child('Videos/' +currentUser +'/' + title + '/' + RandomUuid);
 
@@ -246,39 +227,11 @@ const uploadImage = async(imageResp) => {
       if(dlurly == null || dlurly == undefined) {
         console.log("dlurly its gone")
       } 
-     
-      /*fetch(props.route.params.source).then(respons => respons.blob())/*.then(fetchvid => uploadImage(fetchvid)).then(blob=>uploadFile(blob))*//*.then(blob => firebase.storage().ref().child("Videos/" + user + RandomUuid).put(blob))
-      .then(task => task.ref().getDownloadURL())
-      .then(downloadUrl => resolve(downloadUrl))*/
-      //.then(console.log(downloadUrl))
-      //const upload = async() => { return fetch(props.route.params.source)}
-      //const updoot = await fetch(props.route.params.source)//.then((bot) => {if(bot == undefined) console.log("null")});
-      //upload().then(response => {return response.blob()}, error => console.log(error))
-      //console.log(updoot);
-      //await updoot.blob()
-      //.then(blob => {return firebase.storage().ref().child("Videos").put(blob)})
-      //.then(task => task.getDownloadURL)
-      //.then(downloadUrl => Promise.resolve(downloadUrl))
-     // .then( uri => {
+
       const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
       var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
       setTime(date)
-      //setRandomUuid(uuid());
-      //const fetchvid = await fetch(props.route.params.source)
-      //const videoBlob = await fetchvid.blob();
-      //console.log(videoBlob, currentUser)
-      /*const val = AsyncStorage.getItem("@user_data").catch(console.log);
-      const json = JSON.parse(val);
-      setUser(json.user['Title'] + " " + json.user['name'] + " " + json.user['Battalion']);*/
-      //uploadFile(videoBlob)
-      //.then(() => { gs://rakapp-45add.appspot.com/Videos/${Developer Xanthos GT/${1234NaN
 
-      //console.log( title, props.route.params.source, currentEmail, currentUser, currentPicture);
-      //console.log( title, props.route.params.source, currentEmail, currentUser,  title, description, date );
-      //
-      //console.log("above")
-      //console.log(uri);
-      //console.log("below")
        firebase.app()
         .firestore()
         .collection("Videos")
@@ -289,19 +242,12 @@ const uploadImage = async(imageResp) => {
         .doc(currentUser)
         .collection("Videos")
         .add({
-          //body: 'Videos/' + user + '/' +title + "" + RandomUuid ,
           body:urly,
-          //VideoURI: props.route.params.source,
-          //VideoURI: uploadFile(videoBlob),
-          //VideoURI: URL.createObjectURL(uri),
           VideoURI:urly,
-          //Blob : videoBlob,
           displayName: currentUser,
           email: currentEmail,
-          //picture: currentPicture,
           title: title,
           description: description,
-          //timestamp: firebase.firestore.Timestamp.now(),
           timestamp: date,
           likes: 0,
           dislikes: 0,
@@ -318,7 +264,6 @@ const uploadImage = async(imageResp) => {
            setRequestRunning(false);
         });
 
-        //navigation.navigate("VidPosts");
       
         
     } catch (error) {

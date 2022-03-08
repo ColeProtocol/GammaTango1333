@@ -6,7 +6,6 @@ import { useNavigation } from "@react-navigation/native";
 import * as Firebase from "firebase";
 import EventComponent from "../../components/EventComponent"
 import Colors from "../../constants/Colors";
-//import Firebase from "../../constants/FireBaseDb";
 
 export default function DayEvents(props) {
 console.log(props);
@@ -20,7 +19,6 @@ console.log(props);
     .orderBy("startTime").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
-          //topic: topic_id,
           id: doc.id,
           strapiID: doc.data().id,
           displayName: doc.data().displayName,
@@ -71,11 +69,8 @@ console.log(props);
 
             <View>
               <EventComponent
-                //topic_id={topic_id}
                 body={item.body}
-
                 id={item.id}
-                //picture={item.picture}
                 username={item.displayName}
                 title={item.title}
                 content={item.body}
