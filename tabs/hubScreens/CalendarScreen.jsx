@@ -87,11 +87,6 @@ export default function CalendarScreen() {
           minDate={Date()}
           // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
           maxDate={'2022-05-30'}
-          // Handler which gets executed on day press. Default = undefined
-//           onDayPress={(day) => {
-//             alert("Agenda:");
-//           }}
-          onDayPress={(day) => {alert("Agenda:\n")}}
           // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
           monthFormat={'MMMM yyyy'}
           // Handler which gets executed when visible month changes in calendar. Default = undefined
