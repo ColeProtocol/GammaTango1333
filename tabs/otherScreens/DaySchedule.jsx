@@ -27,7 +27,7 @@ export default function DaySchedule(route) {
           title: doc.data().title,
           email: doc.data().email,
 
-          created_at: "7/29/2021",
+          created_at: "3/8/2022",
           picture: doc.data().picture,
           videoURI : doc.data().videoURI,
           //timestamp: doc.data().timestamp.toDate().toString(),
