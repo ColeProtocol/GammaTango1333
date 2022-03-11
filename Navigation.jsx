@@ -36,11 +36,12 @@ import OutProcessing from "./tabs/hubScreens/OutProcessing";
 import RakFitScreen from "./tabs/hubScreens/RakFitScreen";
 import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
 import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
+
+import VideoScreen from "./tabs/hubScreens/VideoScreen";
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
-import CreatorPageScreen from "./tabs/hubScreens/CreatorPageScreen";
-import Creator1 from "./tabs/hubScreens/Creator1";
+import Book3 from "./tabs/hubScreens/Book3";
 
 // battalion screens
 import BattUnitScreen from "./tabs/hubScreens/BattUnitScreen";
@@ -65,7 +66,8 @@ import DivisionHistoryScreen from "./tabs/hubScreens/DivisionHistoryScreen";
 import DMOR_HMOR_Screen from "./tabs/hubScreens/DMOR_HMOR_Screen";
 import The38DEHistoryScreen from "./tabs/hubScreens/The38DEHistoryScreen";
 import HistoryDetailScreen from "./tabs/hubScreens/HistoryDetailScreen";
-
+import SchedAdd from "./tabs/hubScreens/SchedSubmitScreen";
+import DayEvents from "./tabs/otherScreens/DayEvents";
 // cmd screens
 import OffLimitsScreen from "./tabs/cmdScreens/OffLimitsScreen";
 import PolicyLettersScreen from "./tabs/cmdScreens/PolicyLettersScreen";
@@ -75,6 +77,7 @@ import CmdModal from "./tabs/CmdModal";
 
 // other screens
 import WelcomeScreen from "./tabs/otherScreens/WelcomeScreen";
+import VidPlay from "./tabs/otherScreens/VidPlay";
 import WelcomeVideo from "./tabs/otherScreens/WelcomeVideo";
 import CheckList from "./tabs/otherScreens/CheckList";
 import NewsScreen from "./tabs/otherScreens/NewsScreen";
@@ -89,8 +92,6 @@ import NewComment from "./tabs/otherScreens/NewComment";
 import PostDetail from "./tabs/otherScreens/PostDetail";
 import PostReply from "./tabs/otherScreens/PostReply";
 import ConstructionScreen from "./tabs/otherScreens/Construction";
-import TempVideo from "./tabs/otherScreens/TempVideo";
-import FitVideosScreen from "./tabs/hubScreens/FitVideosScreen";
 
 //chat screen
 //import LoginScreen from "./tabs/chatScreens/LoginScreen";
@@ -106,6 +107,10 @@ import LogOut from "./tabs/LogOut";
 import SignUp from "./tabs/SignUp";
 import SplashScreen from "./tabs/SplashScreen";
 import iconConfig from "./assets/icomoon/iconConfig";
+import VideoSaveScreen from "./tabs/hubScreens/VideoSubmitScreen";
+import Videos from "./tabs/otherScreens/Videos";
+import VidPosts from "./tabs/otherScreens/VidPosts";
+import VidTopics from "./tabs/otherScreens/VidTopics";
 //import UserProfile from "./tabs/UserProfile";
 
 const HubStack = createStackNavigator();
@@ -118,7 +123,7 @@ function HubStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
         headerRight: () => (
           <IconButton
             icon="account"
@@ -152,7 +157,7 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="Forum"
         component={
-          //ForumsScreen
+          // ForumsScreen
           ConstructionScreen
         }
       />
@@ -161,12 +166,12 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="RAKFIT"
         component={
-          RakFitScreen
+           RakFitScreen
           //ConstructionScreen
+          //VidPosts
         }
       />
-      <HubStack.Screen name="FitVideosScreen" component={FitVideosScreen} />
-
+       
       <HubStack.Screen
         name="Calendar"
         component={
@@ -174,7 +179,54 @@ function HubStackScreen({ navigation }) {
           CalendarScreen
         }
       />
-
+      <HubStack.Screen
+        name="SchedSubmitScreen"
+        component={
+          // RakFitScreen
+          SchedAdd
+        }
+      />
+      <HubStack.Screen
+        name="DayEvents"
+        component={
+          // RakFitScreen
+          DayEvents
+        }
+      />
+      <HubStack.Screen
+        name="VideoScreen"
+        component={
+          // RakFitScreen
+          VideoScreen
+        }
+      />
+      <HubStack.Screen
+        name="VidPlay"
+        component={
+          // RakFitScreen
+          VidPlay
+        }
+      />
+      <HubStack.Screen
+        name = "VideoSave"
+        component = {VideoSaveScreen}
+        //options = ({headerShown: false})
+        />
+      <HubStack.Screen
+        name = "Videos"
+        component = {Videos}
+        //options = ({headerShown: false})
+        />
+      <HubStack.Screen
+        name = "VidPosts"
+        component = {VidPosts}
+        //options = ({headerShown: false})
+        />
+        <HubStack.Screen
+        name = "VidTopics"
+        component = {VidTopics}
+        //options = ({headerShown: false})
+        />
       <HubStack.Screen
         name="Reading List"
         component={
@@ -184,16 +236,7 @@ function HubStackScreen({ navigation }) {
       />
       <HubStack.Screen name="Book1" component={Book1} />
       <HubStack.Screen name="Book2" component={Book2} />
-
-      <HubStack.Screen
-        name="Creator Page"
-        component={
-          // Creators page
-          CreatorPageScreen
-        }
-      />
-      <HubStack.Screen name="Creator1" component={Creator1} />
-      <HubStack.Screen name="TempVideo" component={TempVideo} />
+      <HubStack.Screen name="Book3" component={Book3} />
 
       <HubStack.Screen name="Request a Feature" component={NewRequest} />
 
@@ -279,7 +322,7 @@ function NewsStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -315,7 +358,7 @@ function CommandStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -403,7 +446,7 @@ function ChatStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
       }}
     >
       {/*       <ChatStack.Screen

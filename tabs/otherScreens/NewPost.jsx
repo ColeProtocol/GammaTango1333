@@ -30,14 +30,12 @@ export default function NewPost({ route }) {
   const [post, setPost] = useState("");
   const [title, setTitle] = useState("");
 
-  //console.log(topic_id, title, post, currentEmail, currentUser, currentPicture);
 
   const handleSubmit = async () => {
     try {
       const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
       var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
-      
-      //console.log(topic_id, title, post, currentEmail, currentUser, currentPicture);
+
       Firebase.app()
         .firestore()
         .collection("forums")
