@@ -20,38 +20,6 @@ import SquareButton from "../../components/SquareButton";
 
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
-const ENTRIES1 = [
-  [
-    {
-      title: "City Jog",
-      illustration: require("../../assets/images/fitness/jog.jpeg"),
-    },
-    {
-      title: "Agility",
-      illustration: require("../../assets/images/fitness/agility.jpeg"),
-    },
-  ],
-  [
-    {
-      title: "Sprints",
-      illustration: require("../../assets/images/fitness/fitness2.jpg"),
-    },
-    {
-      title: "Lifting",
-      illustration: require("../../assets/images/fitness/lifting.jpeg"),
-    },
-  ],
-  [
-    {
-      title: "Yoga",
-      illustration: require("../../assets/images/fitness/fitness3.jpg"),
-    },
-    {
-      title: "Yoga",
-      illustration: require("../../assets/images/fitness/fitness3.jpg"),
-    },
-  ],
-];
 
 export default function RakFitScreen() {
   const navigation = useNavigation();
