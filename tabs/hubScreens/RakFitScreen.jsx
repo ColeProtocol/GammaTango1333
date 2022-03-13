@@ -11,6 +11,8 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
 
+import axios from "axios";
+import getData from "../../assets/Async/getData";
 import Card from "../../components/Card";
 import Colors from "../../constants/Colors";
 import Dimensions from "../../constants/Dimensions";
@@ -53,10 +55,30 @@ const ENTRIES1 = [
 
 export default function RakFitScreen() {
   const navigation = useNavigation();
-  const [entries, setEntries] = useState([]);
+  const [exercises, setExercises] = useState([]);
   const carouselRef = useRef(null);
   useEffect(() => {
-    setEntries(ENTRIES1);
+    try {
+      const getExercises = async () => {
+        let { jwt } = await getData();
+        const request = await axios.get("http://3.19.67.76:1337/exercises", {
+          headers: {
+            Authorization: `Bearer ${jwt}`,
+          },
+        });
+        var slides = [];
+        let size = 2; //Based on the size you want
+        let tempEx = request.data;
+        while (tempEx.length > 0) {
+          slides.push(tempEx.splice(0, size));
+        }
+        setExercises(slides);
+      };
+      getExercises();
+    } catch (error) {
+      console.log(error);
+    }
+    //setEntries(ENTRIES1);
   }, []);
   const styles = StyleSheet.create({
     container: {
@@ -97,6 +119,10 @@ export default function RakFitScreen() {
       width: screenWidth / 2.7,
       height: screenHeight / 4,
     },
+    stackItem: {
+      width: screenWidth / 2.7,
+      height: screenHeight / 8,
+    },
     scrollContainer: {
       flex: 1,
       marginLeft: 10,
@@ -109,7 +135,7 @@ export default function RakFitScreen() {
     },
     image: {
       ...StyleSheet.absoluteFillObject,
-      // resizeMode: "stretch",
+      resizeMode: "cover",
     },
     title: {
       fontSize: 14,
@@ -117,30 +143,85 @@ export default function RakFitScreen() {
       top: "-15%",
     },
   });
-  const renderItem = ({ item, index }, parallaxProps) => (
-    <View style={styles.item}>
-      <ParallaxImage
-        source={item[0].illustration}
-        containerStyle={styles.imageContainer}
-        style={styles.image}
-        parallaxFactor={0.4}
-        {...parallaxProps}
-      />
-      <View style={styles.centerText}>
-        <Text style={styles.title}>{item[0].title}</Text>
-      </View>
-      <ParallaxImage
-        source={item[1].illustration}
-        containerStyle={styles.imageContainer}
-        style={styles.image}
-        parallaxFactor={0.4}
-        {...parallaxProps}
-      />
-      <View style={styles.centerText}>
-        <Text style={styles.title}>{item[1].title}</Text>
-      </View>
-    </View>
-  );
+
+  const renderItem = ({ item, index }, parallaxProps) => {
+    if (item.length == 2) {
+      return (
+        <View>
+          <TouchableOpacity
+            style={styles.stackItem}
+            onPress={() =>
+              navigation.navigate("Fast Fitness", {
+                id: item[0].id,
+                name: item[0].title,
+                form_image: item[0].form_image.url,
+                description: item[0].description,
+              })
+            }
+          >
+            <ParallaxImage
+              source={{ uri: item[0].cover_image.url }}
+              containerStyle={styles.imageContainer}
+              style={styles.image}
+              parallaxFactor={0.4}
+              {...parallaxProps}
+            />
+            <View style={styles.centerText}>
+              <Text style={styles.title}>{item[0].title}</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.stackItem}
+            onPress={() =>
+              navigation.navigate("Fast Fitness", {
+                id: item[1].id,
+                name: item[1].title,
+                form_image: item[1].form_image.url,
+                description: item[1].description,
+              })
+            }
+          >
+            <ParallaxImage
+              source={{ uri: item[1].cover_image.url }}
+              containerStyle={styles.imageContainer}
+              style={styles.image}
+              parallaxFactor={0.4}
+              {...parallaxProps}
+            />
+            <View style={styles.centerText}>
+              <Text style={styles.title}>{item[1].title}</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      );
+    } else {
+      console.log(item);
+      return (
+        <TouchableOpacity
+          style={styles.stackItem}
+          onPress={() =>
+            navigation.navigate("Fast Fitness", {
+              id: item[0].id,
+              name: item[0].title,
+              form_image: item[0].form_image.url,
+              description: item[0].description,
+            })
+          }
+        >
+          <ParallaxImage
+            source={{ uri: item[0].cover_image.url }}
+            containerStyle={styles.imageContainer}
+            style={styles.image}
+            parallaxFactor={0.4}
+            {...parallaxProps}
+          />
+          <View style={styles.centerText}>
+            <Text style={styles.title}>{item[0].title}</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -165,7 +246,7 @@ export default function RakFitScreen() {
             sliderWidth={screenWidth}
             sliderHeight={screenWidth}
             itemWidth={screenWidth / 2.7 + 5}
-            data={entries}
+            data={exercises}
             renderItem={renderItem}
             hasParallaxImages
             firstItem={1}

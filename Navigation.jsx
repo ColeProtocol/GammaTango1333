@@ -106,6 +106,7 @@ import iconConfig from "./assets/icomoon/iconConfig";
 //import UserProfile from "./tabs/UserProfile";
 
 // rakfit screens
+import FastFitnessScreen from "./tabs/rakfitScreens/FastFitnessScreen";
 import CookingTutorialScreen from "./tabs/rakfitScreens/CookingTutorialScreen";
 import DFACScreen from "./tabs/rakfitScreens/DFACScreen";
 import NutritionScreen from "./tabs/rakfitScreens/NutritionScreen";
@@ -278,6 +279,7 @@ function HubStackScreen({ navigation }) {
         component={UserProfile}
         options={{ headerLeft: null }}
       />
+      <HubStack.Screen name="Fast Fitness" component={FastFitnessScreen} />
       <HubStack.Screen
         name="Cooking Tutorials"
         component={CookingTutorialScreen}
