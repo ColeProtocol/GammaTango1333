@@ -195,7 +195,6 @@ export default function RakFitScreen() {
         </View>
       );
     } else {
-      console.log(item);
       return (
         <TouchableOpacity
           style={styles.stackItem}
@@ -249,7 +248,7 @@ export default function RakFitScreen() {
             data={exercises}
             renderItem={renderItem}
             hasParallaxImages
-            firstItem={1}
+            firstItem={0}
             activeSlideAlignment={"start"}
             inactiveSlideScale={1}
             inactiveSlideOpacity={1}
