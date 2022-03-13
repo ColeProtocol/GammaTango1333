@@ -35,7 +35,7 @@ export default function RakFitScreen() {
           },
         });
         var slides = [];
-        let size = 2; //Based on the size you want
+        let size = 2;
         let tempEx = request.data;
         while (tempEx.length > 0) {
           slides.push(tempEx.splice(0, size));
@@ -46,7 +46,6 @@ export default function RakFitScreen() {
     } catch (error) {
       console.log(error);
     }
-    //setEntries(ENTRIES1);
   }, []);
   const styles = StyleSheet.create({
     container: {
