@@ -5,23 +5,26 @@ import { useNavigation } from "@react-navigation/native";
 import * as Firebase from "firebase";
 //import Firebase from "../../constants/FireBaseDb";
 
-export default function Topics({ navigation }) {
+export default function VidTopics({ navigation }) {
   const [topics, setTopics] = useState([]);
   useEffect(() => {
+    console.log("bye");
     const getTopics = async () => {
       try {        
-        const response = await Firebase.app().firestore().collection('forums').get();
-        //alert(response.data());
-        console.log(response)
+        const response = await Firebase.app().firestore().collection('Videos').get();
+
         const documents = [];
+        //console.log(response.data())
         response.forEach(doc => {
-          console.log(doc.id)
+          console.log("foo");
+          
           documents.push(doc.id);
+          console.log(doc.id);
         });
         
         setTopics(documents.map(doc => {
           return {
-            title: doc,
+            user: doc,
             id: doc
           }
         }));
@@ -33,7 +36,7 @@ export default function Topics({ navigation }) {
     getTopics();
     
   }, [])
-
+  
   return (
     <View style={styles.container}>
       <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -48,8 +51,8 @@ export default function Topics({ navigation }) {
         renderItem={({ item }) => (
           <View style={styles.buttonView}>
             <RectButton
-              text={item.title}
-              onPress={() => navigation.navigate("Posts", { topic_id: item.id, topic_title: item.title })}
+              text={item.id}
+              onPress={() => navigation.navigate("VidPosts", { creator: item.id })}//topic_id: item.id, topic_title: item.title
             />
           </View>
         )}

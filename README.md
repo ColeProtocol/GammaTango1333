@@ -97,3 +97,16 @@ The RAK app is a catch-all application for members of the 187th Airborne Infantr
 * Search bar still doesn't fully work.
 
 * Videos can take an unreasonable amount of time to load.
+## v0.3.0
+### Features
+* Fast Fitness now integrated
+### Bug Fixes 
+* Removed excess comments, code more readable
+
+* Calendar fully functional
+
+* Search bar functional
+
+* Video tab now properly renders and scales videos
+#### Known Issues
+* Need to integrate Map and Link to RakFit
