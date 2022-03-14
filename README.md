@@ -44,7 +44,7 @@ git checkout main & git fetch - p origin & git merge origin/main & git checkout 
 * Search feature is still not fully functional
 
 
-## v0.2.0
+## v0.3.0
 ### Features
 * Updated backend to feature between-device syncing
 
