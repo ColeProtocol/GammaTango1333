@@ -15,7 +15,8 @@ console.log(props);
   const date = props.route.params.date;
   const navigation = useNavigation();
   function unsubscribe() {
-    Firebase.app().firestore().collection("calendar").doc(creator).collection(props.route.params.date.dateString)
+  
+   Firebase.app().firestore().collection("calendar").doc(creator).collection(props.route.params.date.dateString)
     .orderBy("startTime").onSnapshot((snapshot) =>
       setPosts(
         snapshot.docs.map((doc) => ({
