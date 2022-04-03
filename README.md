@@ -110,3 +110,19 @@ The RAK app is a catch-all application for members of the 187th Airborne Infantr
 * Video tab now properly renders and scales videos
 #### Known Issues
 * Need to integrate Map and Link to RakFit
+
+## v0.4.0
+### Features
+* Rak Challenge page is connected to firebase
+
+* Challenges added to firebase
+
+* first half of Rak Challenge page integrated
+
+* Top 5 view added to RakFit screen
+
+* Rankings and description added to challenge page
+
+* Rak challenge changes every 2 weeks
+### Bug Fixes 
+* Integrated Map and Link to RakFit
