@@ -82,6 +82,7 @@ export default function RakFitScreen() {
               entries.push([data.name, data.attempt]);
             });
           });
+        entries = quickSort(entries);
         setChallengeEntries(entries);
         setTop5Entries(entries.slice(0, 5));
       };
@@ -169,11 +170,11 @@ export default function RakFitScreen() {
       marginTop: 10,
     },
     buttonView: {
-      width: "85%",
+      width: "95%",
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-evenly",
-      paddingBottom: 55,
+      paddingBottom: 30,
     },
     challengetext: {
       fontSize: 25,
@@ -187,7 +188,7 @@ export default function RakFitScreen() {
       fontSize: 22,
       color: Colors.primary,
 
-      marginTop: 25,
+      marginTop: 15,
       padding: 5,
     },
     item: {
@@ -196,7 +197,7 @@ export default function RakFitScreen() {
     },
     stackItem: {
       width: screenWidth / 2.7,
-      height: screenHeight / 8,
+      height: screenHeight / 7,
     },
     scrollContainer: {
       flex: 1,
@@ -324,8 +325,8 @@ export default function RakFitScreen() {
             onPress={() =>
               navigation.navigate("Rak Challenge", {
                 names: challengeEntries,
-                title: test,
-                description: test,
+                title: challengeInfo.challengeName,
+                description: challengeInfo.challengeDescription,
               })
             }
           >
@@ -353,7 +354,7 @@ export default function RakFitScreen() {
             inactiveSlideOpacity={1}
           />
         </View>
-        <View style={[styles.buttonView, { paddingTop: 10 }]}>
+        <View style={[styles.buttonView, { paddingTop: 25 }]}>
           <SquareButton
             name="food-apple"
             text="Nutrition"
