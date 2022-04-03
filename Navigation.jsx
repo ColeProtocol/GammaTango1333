@@ -125,6 +125,7 @@ import ACFTScreen from "./tabs/rakfitScreens/H2FResourceScreens/ACFTScreen";
 import EasyPlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/EasyPlate";
 import ModeratePlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/ModeratePlate";
 import HardPlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/HardPlate";
+import RakChallengeScreen from "./tabs/rakfitScreens/RakChallengeScreen";
 
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
@@ -280,6 +281,7 @@ function HubStackScreen({ navigation }) {
         options={{ headerLeft: null }}
       />
       <HubStack.Screen name="Fast Fitness" component={FastFitnessScreen} />
+      <HubStack.Screen name="Rak Challenge" component={RakChallengeScreen} />
       <HubStack.Screen
         name="Cooking Tutorials"
         component={CookingTutorialScreen}

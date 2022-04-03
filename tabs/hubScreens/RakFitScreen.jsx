@@ -6,57 +6,49 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  FlatList,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import Carousel, { ParallaxImage } from "react-native-snap-carousel";
+import Firebase from "../../constants/FireBaseDb";
 
 import axios from "axios";
 import getData from "../../assets/Async/getData";
-import Card from "../../components/Card";
+import { Card, CardItem, Body } from "native-base";
 import Colors from "../../constants/Colors";
 import Dimensions from "../../constants/Dimensions";
 import SquareButton from "../../components/SquareButton";
 
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
-const ENTRIES1 = [
-  [
-    {
-      title: "City Jog",
-      illustration: require("../../assets/images/fitness/jog.jpeg"),
-    },
-    {
-      title: "Agility",
-      illustration: require("../../assets/images/fitness/agility.jpeg"),
-    },
-  ],
-  [
-    {
-      title: "Sprints",
-      illustration: require("../../assets/images/fitness/fitness2.jpg"),
-    },
-    {
-      title: "Lifting",
-      illustration: require("../../assets/images/fitness/lifting.jpeg"),
-    },
-  ],
-  [
-    {
-      title: "Yoga",
-      illustration: require("../../assets/images/fitness/fitness3.jpg"),
-    },
-    {
-      title: "Yoga",
-      illustration: require("../../assets/images/fitness/fitness3.jpg"),
-    },
-  ],
-];
 
 export default function RakFitScreen() {
   const navigation = useNavigation();
   const [exercises, setExercises] = useState([]);
+  const [challengeEntries, setChallengeEntries] = useState([]);
+  const [top5Entries, setTop5Entries] = useState([]);
+  const [challengeInfo, setChallengeInfo] = useState([]);
+
   const carouselRef = useRef(null);
+  function quickSort(arr, length = arr.length - 1, start = 0) {
+    if (arr.length < 2) return arr;
+
+    const pivot = arr[arr.length - 1];
+    const left = [];
+    const right = [];
+
+    while (start < length) {
+      if (arr[start][1] > pivot[1]) {
+        left.push(arr[start]);
+      } else {
+        right.push(arr[start]);
+      }
+      start++;
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
+  }
+  const test = "testttttesttest";
   useEffect(() => {
     try {
       const getExercises = async () => {
@@ -67,7 +59,7 @@ export default function RakFitScreen() {
           },
         });
         var slides = [];
-        let size = 2; //Based on the size you want
+        let size = 2;
         let tempEx = request.data;
         while (tempEx.length > 0) {
           slides.push(tempEx.splice(0, size));
@@ -75,10 +67,93 @@ export default function RakFitScreen() {
         setExercises(slides);
       };
       getExercises();
+
+      const getChallengeEntries = async () => {
+        let entries = [];
+        await Firebase.app()
+          .firestore()
+          .collection("rakfitChallenges")
+          .doc("challengeInfo")
+          .collection("entries")
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              const data = doc.data();
+              entries.push([data.name, data.attempt]);
+            });
+          });
+        setChallengeEntries(entries);
+        setTop5Entries(entries.slice(0, 5));
+      };
+      getChallengeEntries();
+
+      const getChallengeInfo = async () => {
+        let gotChallengeInfo;
+        await Firebase.app()
+          .firestore()
+          .collection("rakfitChallenges")
+          .doc("challengeInfo")
+          .get()
+          .then((snapshot) => {
+            gotChallengeInfo = {
+              challengeName: snapshot.data()["challengeName"],
+              challengeIndex: snapshot.data()["challengeIndex"],
+              challengeDescription: snapshot.data()["challengeDescription"],
+              challengeEnd: snapshot.data()["challengeEnd"].toDate(),
+            };
+          });
+        setChallengeInfo(gotChallengeInfo);
+        if (gotChallengeInfo.challengeEnd.getTime() < new Date().getTime()) {
+          await updateChallenge(gotChallengeInfo.challengeEnd);
+        }
+      };
+      getChallengeInfo();
+
+      async function updateChallenge(challEnd) {
+        challEnd = new Date(challEnd);
+        let challenges = [];
+        await Firebase.app()
+          .firestore()
+          .collection("rakfitChallenges")
+          .doc("challengeInfo")
+          .collection("challenges")
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((doc) => {
+              const data = doc.data();
+              challenges.push([data.index, data.name, data.description]);
+            });
+          });
+        let challLen = challenges.length;
+        let newChallengeInfo;
+        let newChallengeIndex =
+          (parseInt(challengeInfo.challengeIndex) + 1) % challLen;
+        let newChallengeEnd = new Date(challEnd.getTime() + 12096e5);
+        for (let i = 0; i < challLen; i++) {
+          if (challenges[i][0] == newChallengeIndex) {
+            newChallengeInfo = {
+              challengeName: challenges[i][1],
+              challengeIndex: challenges[i][0],
+              challengeDescription: challenges[i][2],
+              challengeEnd: newChallengeEnd,
+            };
+            setChallengeInfo(newChallengeInfo);
+            break;
+          }
+        }
+        let firebaseNewInfo = newChallengeInfo;
+        firebaseNewInfo.challengeEnd = Firebase.firestore.Timestamp.fromDate(
+          newChallengeEnd
+        );
+        await Firebase.app()
+          .firestore()
+          .collection("rakfitChallenges")
+          .doc("challengeInfo")
+          .set(firebaseNewInfo);
+      }
     } catch (error) {
       console.log(error);
     }
-    //setEntries(ENTRIES1);
   }, []);
   const styles = StyleSheet.create({
     container: {
@@ -141,6 +216,17 @@ export default function RakFitScreen() {
       fontSize: 14,
       color: Colors.black,
       top: "-15%",
+    },
+    name: {
+      fontWeight: "normal",
+      fontSize: 18,
+    },
+    score: {
+      fontWeight: "bold",
+      fontSize: 18,
+    },
+    challengeCard: {
+      width: "90%",
     },
   });
 
@@ -215,28 +301,41 @@ export default function RakFitScreen() {
             {...parallaxProps}
           />
           <View style={styles.centerText}>
-            <Text style={styles.title}>{item[0].title}</Text>
+            <Text style={styles.centerText}>{item[0].title}</Text>
           </View>
         </TouchableOpacity>
       );
     }
   };
 
+  const renderTop5 = ({ item, index }) => (
+    <Text style={styles.name}>
+      {index + 1}. {item[0]}: <Text style={styles.score}>{item[1]}</Text>
+    </Text>
+  );
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.container2}>
         <Text style={styles.challengetext}>Rakkasan Challenge</Text>
-        <TouchableOpacity>
-          <Card>
-            <Image
-              source={require("../../assets/images/fitness/fitness2.jpg")}
-              style={{
-                width: screenWidth / 1.5,
-                height: screenWidth / 2.5,
-              }}
-            />
-          </Card>
-        </TouchableOpacity>
+
+        <Card style={styles.challengeCard}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Rak Challenge", {
+                names: challengeEntries,
+                title: test,
+                description: test,
+              })
+            }
+          >
+            <CardItem>
+              <Body>
+                <FlatList data={top5Entries} renderItem={renderTop5} />
+              </Body>
+            </CardItem>
+          </TouchableOpacity>
+        </Card>
 
         <Text style={styles.fitnesstext}>Fast Fitness</Text>
         <View style={styles.scrollContainer}>
