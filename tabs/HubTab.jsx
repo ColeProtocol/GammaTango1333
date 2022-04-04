@@ -129,6 +129,8 @@ export default function HubTab() {
             //onPress={() => test()}
             hubIcon={true}
           />
+        </View>
+        <View style={styles.buttonView}>
            <SquareButton
             name="Video Posts"
             text="Videos"
@@ -138,8 +140,6 @@ export default function HubTab() {
             //onPress={() => test()}
             hubIcon={true}
           />
-        </View>
-        <View style={[styles.buttonView]}>
           <SquareButton
             name="Resources"
             text="Army Resources"
@@ -148,6 +148,8 @@ export default function HubTab() {
             onPress={() => navigation.navigate("Army Resources")}
             hubIcon={true}
           />
+        </View>
+        <View style={[styles.buttonView]}>
           <SquareButton
             name="RAKFIT"
             text="RAKFIT"
@@ -156,8 +158,6 @@ export default function HubTab() {
             onPress={() => navigation.navigate("RAKFIT")}
             hubIcon={true}
           />
-        </View>
-        <View style={[styles.buttonView, { paddingBottom: 45 }]}>
           <SquareButton
             name="Calendar"
             text="Calendar"
@@ -166,6 +166,8 @@ export default function HubTab() {
             onPress={() => navigation.navigate("Calendar")}
             hubIcon={true}
           />
+        </View>
+        <View style={[styles.buttonView, { paddingBottom: 45 }]}>
           <SquareButton
             name="Reading List"
             text="Reading List"
@@ -174,8 +176,6 @@ export default function HubTab() {
             onPress={() => navigation.navigate("Reading List")}
             hubIcon={true}
           />
-          </View>
-          <View style={[styles.buttonView, { paddingBottom: 45 }]}>
           <SquareButton
              name="Creator"
              text="Creator Page"
