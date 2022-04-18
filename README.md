@@ -56,6 +56,19 @@ git checkout main & git fetch - p origin & git merge origin/main & git checkout 
 #### Known Issues
 * Search feature is still not fully functional
 
+
+## v0.4.0
+### Features
+* Books are now viewable to all users
+
+* Users can find books of a perticular topic
+
+### Bug Fixes 
+* Book tabs no longer lead to blank pages
+
+#### Known Issues
+* Search feature is still not fully functional
+
 # RAK App Summary - JIF 1321
 The RAK app is a catch-all application for members of the 187th Airborne Infantry Regiment of the U.S. Army, also known as the Rakka-sans, derived from the Japanese word for “parachute”. The app is intended to provide members of the Rakkasans with a single hub for key activities and information around base; its key functionality is to provide easy access to military documents (e.g. onboarding documents), but the full scope of the app includes a wide variety of features, including maps of base, events calendars, messaging, fitness instructions, and more. 
 
@@ -110,3 +123,19 @@ The RAK app is a catch-all application for members of the 187th Airborne Infantr
 * Video tab now properly renders and scales videos
 #### Known Issues
 * Need to integrate Map and Link to RakFit
+
+## v0.4.0
+### Features
+* Rak Challenge page is connected to firebase
+
+* Challenges added to firebase
+
+* first half of Rak Challenge page integrated
+
+* Top 5 view added to RakFit screen
+
+* Rankings and description added to challenge page
+
+* Rak challenge changes every 2 weeks
+### Bug Fixes 
+* Integrated Map and Link to RakFit
