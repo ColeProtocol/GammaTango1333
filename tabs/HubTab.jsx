@@ -185,6 +185,16 @@ export default function HubTab() {
              hubIcon={false}
           />
         </View>
+         <View style={[styles.buttonView, { paddingBottom: 45 }]}>
+          <SquareButton
+             name="Books"
+             text="Books"
+             buttonSize={75}
+             textSize={11}
+             onPress={() => navigation.navigate("Books")}
+             hubIcon={false}
+          />
+        </View>
         <Button
           containerStyle={{
             marginTop: -20,

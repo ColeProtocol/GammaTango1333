@@ -38,6 +38,7 @@ import ResourcesPDF from "./tabs/hubScreens/ResourcesPDF";
 import CalendarScreen from "./tabs/hubScreens/CalendarScreen";
 
 import VideoScreen from "./tabs/hubScreens/VideoScreen";
+
 import ReadingListScreen from "./tabs/hubScreens/ReadingListScreen";
 import Book1 from "./tabs/hubScreens/Book1";
 import Book2 from "./tabs/hubScreens/Book2";
@@ -78,6 +79,7 @@ import CmdModal from "./tabs/CmdModal";
 // other screens
 import WelcomeScreen from "./tabs/otherScreens/WelcomeScreen";
 import VidPlay from "./tabs/otherScreens/VidPlay";
+import ReadBook from "./tabs/otherScreens/ReadBook";
 import WelcomeVideo from "./tabs/otherScreens/WelcomeVideo";
 import CheckList from "./tabs/otherScreens/CheckList";
 import NewsScreen from "./tabs/otherScreens/NewsScreen";
@@ -111,6 +113,9 @@ import VideoSaveScreen from "./tabs/hubScreens/VideoSubmitScreen";
 import Videos from "./tabs/otherScreens/Videos";
 import VidPosts from "./tabs/otherScreens/VidPosts";
 import VidTopics from "./tabs/otherScreens/VidTopics";
+
+import Books from "./tabs/otherScreens/Books";
+
 //import UserProfile from "./tabs/UserProfile";
 
 const HubStack = createStackNavigator();
@@ -207,6 +212,13 @@ function HubStackScreen({ navigation }) {
           VidPlay
         }
       />
+       <HubStack.Screen
+        name="ReadBook"
+        component={
+          // RakFitScreen
+          ReadBook
+        }
+      />
       <HubStack.Screen
         name = "VideoSave"
         component = {VideoSaveScreen}
@@ -215,6 +227,11 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name = "Videos"
         component = {Videos}
+        //options = ({headerShown: false})
+        />
+         <HubStack.Screen
+        name = "Books"
+        component = {Books}
         //options = ({headerShown: false})
         />
       <HubStack.Screen
