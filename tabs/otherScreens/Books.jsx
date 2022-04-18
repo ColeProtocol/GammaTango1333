@@ -7,12 +7,15 @@ import Post from "../../components/Post";
 import BookComponent from "../../components/BookComponent";
 import Button from "react-native-button";
 import * as Firebase from "firebase";
+import { Searchbar } from "react-native-paper";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Books({ route, navigation }) {
 
   //const creator= route.params.creator;
+  const [searchQuery, setSearchQuery] = React.useState("");
 
+  const onChangeSearch = (query) => setSearchQuery(query);
   function unsubscribe(orderby, direction) {
     Firebase.app().firestore().collection("Books")
     .orderBy(orderby, direction).onSnapshot((snapshot) =>
@@ -187,6 +190,10 @@ export default function Books({ route, navigation }) {
     //console.log(posts2);
   return (
     <View style={styles.container}>
+        <Searchbar
+        placeholder="Search"
+        onChangeText={onChangeSearch}
+        value={searchQuery}/>
       <View>
         <Text style={styles.topicTitle}>Books</Text>
         <View style = {styles.buttons}>
