@@ -170,10 +170,10 @@ export default function HubTab() {
         <View style={[styles.buttonView, { paddingBottom: 45 }]}>
           <SquareButton
             name="Reading List"
-            text="Reading List"
+            text="Books"
             buttonSize={75}
             textSize={11}
-            onPress={() => navigation.navigate("Reading List")}
+            onPress={() => navigation.navigate("Books")}
             hubIcon={true}
           />
           <SquareButton
@@ -182,16 +182,6 @@ export default function HubTab() {
              buttonSize={75}
              textSize={11}
              onPress={() => navigation.navigate("Creator Page")}
-             hubIcon={false}
-          />
-        </View>
-         <View style={[styles.buttonView, { paddingBottom: 45 }]}>
-          <SquareButton
-             name="Books"
-             text="Books"
-             buttonSize={75}
-             textSize={11}
-             onPress={() => navigation.navigate("Books")}
              hubIcon={false}
           />
         </View>
