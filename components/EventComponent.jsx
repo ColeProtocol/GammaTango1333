@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import firebase, * as Firebase from "firebase";
-import { IconButton, Colors } from 'react-native-paper';
+import {Feather } from '@expo/vector-icons';
+import { IconButton, Colors, TouchableOpacity } from 'react-native-paper';
 import{ Video } from 'expo-av'
 import moment from 'react-moment';
 
 
 export default function EventComponent({
+    id,
     body,
     displayName,    
     title,
@@ -16,6 +18,8 @@ export default function EventComponent({
     timestamp,
     startTime,
     endTime,
+    owner,
+    currentday,
 }) {
   const navigation = useNavigation();
   const starti = new Date();
@@ -23,7 +27,9 @@ export default function EventComponent({
   const start = new Date(startTime.seconds*1000);
   const end = new Date(endTime.seconds*1000)
 
-
+  /*async function deleteEvent() {
+   Firebase.app().firestore().collection("calendar").doc(owner).collection(currentday).doc(id).delete()
+  }*/
 
  console.log(startTime)
   console.log(
@@ -51,13 +57,32 @@ export default function EventComponent({
         </View>
 
         <Text style={styles.date}>{"Starting time: " + start}</Text> 
-        <Text style={styles.date}>{"Starting time: " + end}</Text> 
+        <Text style={styles.date}>{"Starting time: " + end}</Text>
+       
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+ cancelbutton: {
+      alignItems: 'center',
+      flex: 1,
+      borderColor: 'gray',
+      borderWidth: 1,
+      flexDirection: 'row',
+      paddingVertical: 10,
+      paddingHorizontal : 20,
+      justifyContent: 'center',
+      borderRadius: 6,
+      marginRight: 10
+    },
+cancelButtonTxt: {
+      fontWeight: 'bold',
+      color: 'red',
+      marginLeft: 7,
+      fontSize: 16
+    },
   container: {
     width: 385,
     borderColor: "#D1D1D1",

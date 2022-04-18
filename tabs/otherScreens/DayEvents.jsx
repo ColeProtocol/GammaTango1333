@@ -4,6 +4,7 @@ import RectButton from "../../components/RectButton";
 import Button from "react-native-button";
 import { useNavigation } from "@react-navigation/native";
 import * as Firebase from "firebase";
+
 import EventComponent from "../../components/EventComponent"
 import Colors from "../../constants/Colors";
 
@@ -27,6 +28,8 @@ console.log(props);
           title: doc.data().title,
           startTime : doc.data().startTime,
           endTime : doc.data().endTime,
+          owner: creator,
+          currentday: props.route.params.date.dateString
         }))
       )
     );
@@ -34,7 +37,9 @@ console.log(props);
 
   const [posts, setPosts] = useState(() => unsubscribe());
 
-
+  async function deleteEvent(item) {
+   Firebase.app().firestore().collection("calendar").doc(creator).collection(props.route.params.date.dateString).doc(item.id).delete()
+  }
   const _listEmptyComponent = () => {
     return (
       <View
@@ -66,7 +71,10 @@ console.log(props);
         contentContainerStyle={{ flexGrow: 1 }}
         style={{ flex: 1 }}
         renderItem={({ item }) => (
-
+        <TouchableHighlight
+            style={styles.item}
+            onLongPress={() => deleteEvent(item)}
+          >
             <View>
               <EventComponent
                 body={item.body}
@@ -77,10 +85,12 @@ console.log(props);
                 timestamp = {item.timestamp}
                 startTime = {item.startTime}
                 endTime = {item.endTime}
-                
+                owner = {item.owner}
+                currentday = {item.currentDay}
               />
+            
             </View>
-          
+           </TouchableHighlight>
         )}
       />
 
