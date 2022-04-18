@@ -198,59 +198,80 @@ export default function SchedSubmitScreen(props) {
   
 
  const handleSubmit = async (currentEmail, currentUser) => {
-    try {
+    
+        try {
+        console.log(title)
+        console.log(description)
+        console.log(date1)
+         console.log(date2)
+         if(title == "" && description == "") {
+          alert("title and description required");
+         throw new Error('Required');
 
-   
-      const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
-      var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
-      setTime(date)
-      setRandomUuid(uuid(16));
-      await firebase.app()
-        .firestore()
-        .collection("calendar")
-        .doc(currentUser).set({id: currentUser});
+         
+         }
+         if(title == "" ) {
+          alert("title  required");
+         throw new Error('Required');
+
+         
+         }
+         if(description == "") {
+          alert("description required");
+         throw new Error('Required');
+
+         
+         } 
+          const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
+          var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
+          setTime(date)
+          setRandomUuid(uuid(16));
+          await firebase.app()
+            .firestore()
+            .collection("calendar")
+            .doc(currentUser).set({id: currentUser});
         
      
-        console.log("datestring " );
-        console.log( props.route.params.date.dateString);
-      await firebase.app()
-        .firestore()
-        .collection("calendar")
-        .doc(currentUser)
-        .collection(props.route.params.date.dateString)
-        .add({
+            console.log("datestring " );
+            console.log( props.route.params.date.dateString);
+          await firebase.app()
+            .firestore()
+            .collection("calendar")
+            .doc(currentUser)
+            .collection(props.route.params.date.dateString)
+            .add({
           
-          body:description,
+              body:description,
 
-          displayName: currentUser,
+              displayName: currentUser,
             
-          title: title,
-          description: description,
-          timestamp: date,
-          startTime: date1,
-          endTime: date2,
+              title: title,
+              description: description,
+              timestamp: date,
+              startTime: date1,
+              endTime: date2,
 
-        })
-        .then(() => {
-          alert("Your post has been submitted!");
-           setRequestRunning(false);
-          navigation.goBack();
+            })
+            .then(() => {
+              alert("Your post has been submitted!");
+               setRequestRunning(false);
+              navigation.goBack();
           
 
-        })
-        .catch((error) => {
-          console.log("Error adding document: ", error);
-           setRequestRunning(false);
-        });
+            })
+            .catch((error) => {
+              console.log("Error adding document: ", error);
+               setRequestRunning(false);
+            });
 
       
         
-    } catch (error) {
-      console.log(error);
-      setRequestRunning(false);
-    }
-    
-  };
+        } catch (error) {
+          console.log(error);
+          setRequestRunning(false);
+        }
+       
+      };
 
 
 

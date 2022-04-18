@@ -35,7 +35,12 @@ export default function NewVid({ route }) {
   //console.log(topic_id, title, vid, currentEmail, currentUser, currentPicture);
 
   const handleSubmit = async () => {
+    
     try {
+        if(title == "") {
+         alert("title  required");
+         throw new Error('Required');
+        }
       const dateInMillis  = firebase.firestore.Timestamp.now().seconds * 1000
       var date = new Date(dateInMillis).toDateString() + ' at ' + new Date(dateInMillis).toLocaleTimeString()
 
@@ -64,6 +69,7 @@ export default function NewVid({ route }) {
         });
     } catch (error) {
       console.log(error);
+    }
     }
   };
 
