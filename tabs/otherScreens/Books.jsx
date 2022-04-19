@@ -103,7 +103,7 @@ export default function Books({ route, navigation }) {
       }*/
       
       setRefresh(!refresh)
-      setRefresh(!refresh)
+
       //}
       
       /* console.log(order == orderby);
@@ -167,7 +167,20 @@ export default function Books({ route, navigation }) {
   
   
   const [posts, setPosts] = useState(() => unsubscribe("bookTitle", "asc"));
+  this.state = {
+      searchText: "",
+      data: posts,
+      filteredData: []
+      };
+  search = (searchText) => {
+  this.setState({searchText: searchText});
 
+  let filteredData = this.state.data.filter(function (item) {
+    return (item.title.includes(searchText)||item.author.includes(searchText)||item.content.includes(searchText));
+  });
+
+  this.setState({filteredData: filteredData});
+};
   const _listEmptyComponent = () => {
     return (
       <View
@@ -189,6 +202,15 @@ export default function Books({ route, navigation }) {
     <View style={styles.container}>
       <View>
         <Text style={styles.topicTitle}>Books</Text>
+        <SearchBar
+          round={true}
+          lightTheme={true}
+          placeholder="Search..."
+          autoCapitalize='none'
+          autoCorrect={false}
+          onChangeText={this.search}
+          value={this.state.searchText}
+        />
         <View style = {styles.buttons}>
         <Button
           containerStyle={{
@@ -237,7 +259,8 @@ export default function Books({ route, navigation }) {
         ListEmptyComponent={_listEmptyComponent}
         contentContainerStyle={{ flexGrow: 1 }}
         style={{ flex: 1 }}
-        data = {posts}
+        //data = {posts}
+        data={this.state.filteredData && this.state.filteredData.length > 0 ? this.state.filteredData : this.state.data}
         renderItem={({ item }) => (
           <TouchableHighlight
             style={styles.item}
