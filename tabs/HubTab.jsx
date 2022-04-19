@@ -182,7 +182,7 @@ export default function HubTab() {
              buttonSize={75}
              textSize={11}
              onPress={() => navigation.navigate("Creator Page")}
-             hubIcon={false}
+             hubIcon={true}
           />
         </View>
         <Button
