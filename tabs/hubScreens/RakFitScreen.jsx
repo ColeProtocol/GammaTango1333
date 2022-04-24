@@ -23,7 +23,8 @@ import SquareButton from "../../components/SquareButton";
 const screenWidth = Dimensions.window.width;
 const screenHeight = Dimensions.window.height;
 
-export default function RakFitScreen() {
+export default function RakFitScreen({ route }) {
+  const { username } = route.params;
   const navigation = useNavigation();
   const [exercises, setExercises] = useState([]);
   const [challengeEntries, setChallengeEntries] = useState([]);
@@ -48,7 +49,7 @@ export default function RakFitScreen() {
     }
     return [...quickSort(left), pivot, ...quickSort(right)];
   }
-  const test = "testttttesttest";
+
   useEffect(() => {
     try {
       const getExercises = async () => {
@@ -96,6 +97,7 @@ export default function RakFitScreen() {
           .doc("challengeInfo")
           .get()
           .then((snapshot) => {
+            console.log(snapshot.data()["challengeName"]);
             gotChallengeInfo = {
               challengeName: snapshot.data()["challengeName"],
               challengeIndex: snapshot.data()["challengeIndex"],
@@ -104,7 +106,8 @@ export default function RakFitScreen() {
             };
           });
         setChallengeInfo(gotChallengeInfo);
-        if (gotChallengeInfo.challengeEnd.getTime() < new Date().getTime()) {
+        console.log(gotChallengeInfo.challengeEnd.getTime());
+        if (gotChallengeInfo.challengeEnd.getTime() < Date.now()) {
           await updateChallenge(gotChallengeInfo.challengeEnd);
         }
       };
@@ -142,6 +145,19 @@ export default function RakFitScreen() {
             break;
           }
         }
+
+        // Delete all of the entries
+        Firebase.firestore()
+          .collection("rakfitChallenges")
+          .doc("challengeInfo")
+          .collection("entries")
+          .get()
+          .then((res) => {
+            res.forEach((element) => {
+              element.ref.delete();
+            });
+          });
+
         let firebaseNewInfo = newChallengeInfo;
         firebaseNewInfo.challengeEnd = Firebase.firestore.Timestamp.fromDate(
           newChallengeEnd
@@ -231,6 +247,14 @@ export default function RakFitScreen() {
     },
   });
 
+  function EmptyText() {
+    if (top5Entries.length == 0) {
+      return <Text style={styles.name}>No entries yet. Be the first!</Text>;
+    } else {
+      return null;
+    }
+  }
+
   const renderItem = ({ item, index }, parallaxProps) => {
     if (item.length == 2) {
       return (
@@ -309,11 +333,29 @@ export default function RakFitScreen() {
     }
   };
 
-  const renderTop5 = ({ item, index }) => (
-    <Text style={styles.name}>
-      {index + 1}. {item[0]}: <Text style={styles.score}>{item[1]}</Text>
-    </Text>
-  );
+  let lastNum = -100;
+  let outOfPlace = 0;
+
+  const renderTop5 = ({ item, index }) => {
+    if (item[1] == lastNum) {
+      lastNum = item[1];
+      outOfPlace++;
+      return (
+        <Text style={styles.name}>
+          {index - outOfPlace + 1}. {item[0]}:{" "}
+          <Text style={styles.score}>{item[1]}</Text>
+        </Text>
+      );
+    } else {
+      lastNum = item[1];
+      return (
+        <Text style={styles.name}>
+          {index - outOfPlace + 1}. {item[0]}:{" "}
+          <Text style={styles.score}>{item[1]}</Text>
+        </Text>
+      );
+    }
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -327,11 +369,15 @@ export default function RakFitScreen() {
                 names: challengeEntries,
                 title: challengeInfo.challengeName,
                 description: challengeInfo.challengeDescription,
+                username: username,
+                challengeEnd: challengeInfo.challengeEnd,
               })
             }
           >
             <CardItem>
               <Body>
+                <Text style={styles.score}>{challengeInfo.challengeName}</Text>
+                <EmptyText />
                 <FlatList data={top5Entries} renderItem={renderTop5} />
               </Body>
             </CardItem>
