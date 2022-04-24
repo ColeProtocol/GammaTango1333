@@ -249,3 +249,14 @@ The RAK app is a catch-all application for members of the 187th Airborne Infantr
 * Rak challenge changes every 2 weeks
 ### Bug Fixes 
 * Integrated Map and Link to RakFit
+*
+## v0.5.0
+### Features
+
+* Second half of Rak Challenge page integrated
+
+* Rak Challenges now display in the hub
+### Bug Fixes 
+* Occasionally empty Rak Challenges now always display
+
+* UI altered to make easier to navigate
