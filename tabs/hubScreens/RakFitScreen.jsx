@@ -433,14 +433,6 @@ export default function RakFitScreen({ route }) {
             iconSize={30}
             onPress={() => navigation.navigate("Cooking Tutorials")}
           />
-          <SquareButton
-            name="video"
-            text="Videos"
-            buttonSize={90}
-            textSize={14}
-            iconSize={50}
-            onPress={() => navigation.navigate("FitVideosScreen")}
-          />
         </View>
       </View>
     </ScrollView>
