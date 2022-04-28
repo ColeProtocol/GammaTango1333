@@ -10,6 +10,8 @@ import SquareButton from "../components/SquareButton";
 import Button from "react-native-button";
 import AppleMap from "../components/AppleMap";
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import axios from "axios";
 import getData from "../assets/Async/getData";
 
@@ -155,7 +157,11 @@ export default function HubTab() {
             text="RAKFIT"
             buttonSize={75}
             textSize={11}
-            onPress={() => navigation.navigate("RAKFIT")}
+            onPress={() =>
+              navigation.navigate("RAKFIT", {
+                username: username,
+              })
+            }
             hubIcon={true}
           />
           <SquareButton

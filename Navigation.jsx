@@ -118,6 +118,28 @@ import Books from "./tabs/otherScreens/Books";
 
 //import UserProfile from "./tabs/UserProfile";
 
+// rakfit screens
+import FastFitnessScreen from "./tabs/rakfitScreens/FastFitnessScreen";
+import CookingTutorialScreen from "./tabs/rakfitScreens/CookingTutorialScreen";
+import DFACScreen from "./tabs/rakfitScreens/DFACScreen";
+import NutritionScreen from "./tabs/rakfitScreens/NutritionScreen";
+import MealTips from "./tabs/rakfitScreens/Nutrition/MealTips";
+import SampleMeals from "./tabs/rakfitScreens/Nutrition/SampleMeals";
+import ShoppingList from "./tabs/rakfitScreens/Nutrition/ShoppingList";
+import Holiday from "./tabs/rakfitScreens/Nutrition/Holiday";
+import Coupons from "./tabs/rakfitScreens/Nutrition/Coupons";
+import Cookbook from "./tabs/rakfitScreens/Nutrition/Cookbook";
+import SupplimentAlt from "./tabs/rakfitScreens/Nutrition/SupplimentAlt";
+import CookingGuide from "./tabs/rakfitScreens/Nutrition/CookingGuide";
+import PMCS from "./tabs/rakfitScreens/Nutrition/PMCS";
+import MRE from "./tabs/rakfitScreens/Nutrition/MRE";
+import H2FScreen from "./tabs/rakfitScreens/H2FScreen";
+import ACFTScreen from "./tabs/rakfitScreens/H2FResourceScreens/ACFTScreen";
+import EasyPlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/EasyPlate";
+import ModeratePlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/ModeratePlate";
+import HardPlateScreen from "./tabs/rakfitScreens/H2FResourceScreens/HardPlate";
+import RakChallengeScreen from "./tabs/rakfitScreens/RakChallengeScreen";
+
 const HubStack = createStackNavigator();
 function HubStackScreen({ navigation }) {
   return (
@@ -128,7 +150,7 @@ function HubStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerRight: () => (
           <IconButton
             icon="account"
@@ -171,12 +193,19 @@ function HubStackScreen({ navigation }) {
       <HubStack.Screen
         name="RAKFIT"
         component={
-           RakFitScreen
+          RakFitScreen
           //ConstructionScreen
-          //VidPosts
         }
       />
-       
+      <HubStack.Screen name="H2F" component={H2FScreen} />
+      <HubStack.Screen name="ACFT" component={ACFTScreen} />
+      <HubStack.Screen name="Plate For Easy Day" component={EasyPlateScreen} />
+      <HubStack.Screen
+        name="Plate For Mod. Day"
+        component={ModeratePlateScreen}
+      />
+      <HubStack.Screen name="Plate For Hard Day" component={HardPlateScreen} />
+
       <HubStack.Screen
         name="Calendar"
         component={
@@ -323,8 +352,34 @@ function HubStackScreen({ navigation }) {
         component={UserProfile}
         options={{ headerLeft: null }}
       />
+      <HubStack.Screen name="Fast Fitness" component={FastFitnessScreen} />
+      <HubStack.Screen name="Rak Challenge" component={RakChallengeScreen} />
+      <HubStack.Screen
+        name="Cooking Tutorials"
+        component={CookingTutorialScreen}
+      />
+      <HubStack.Screen name="DFAC" component={DFACScreen} />
+      <HubStack.Screen name="Nutrition" component={NutritionScreen} />
+      <HubStack.Screen name="Cookbook" component={Cookbook} />
+      <HubStack.Screen name="Grocery Store Coupons" component={Coupons} />
+      <HubStack.Screen name="Holiday Meal Plan" component={Holiday} />
+      <HubStack.Screen name="Sample Meals" component={SampleMeals} />
+      <HubStack.Screen name="Barracks Shopping List" component={ShoppingList} />
+      <HubStack.Screen
+        name="Suppliment Alternatives"
+        component={SupplimentAlt}
+      />
+      <HubStack.Screen name="Meal Tips" component={MealTips} />
+      <HubStack.Screen name="Cooking Guide" component={CookingGuide} />
+      <HubStack.Screen name="PMCS" component={PMCS} />
+      <HubStack.Screen name="MRE" component={MRE} />
+
       <HubStack.Screen name="Preferences" component={Preferences} />
       <HubStack.Screen name="Avatar List" component={AccountAvatarList} />
+      <HubStack.Screen
+        name="ConstructionScreen"
+        component={ConstructionScreen}
+      />
     </HubStack.Navigator>
   );
 }
@@ -339,7 +394,7 @@ function NewsStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -375,7 +430,7 @@ function CommandStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
         headerBackTitleVisible: false,
         headerRight: () => (
           <IconButton
@@ -463,7 +518,7 @@ function ChatStackScreen({ navigation }) {
           backgroundColor: Colors.primary,
         },
         headerTintColor: Colors.white,
-        headerTitleStyle: { fontSize: 25, /*fontFamily: "fira-sans"*/ },
+        headerTitleStyle: { fontSize: 25 /*fontFamily: "fira-sans"*/ },
       }}
     >
       {/*       <ChatStack.Screen
