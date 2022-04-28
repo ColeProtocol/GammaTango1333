@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {TouchableHighlight, FlatList, StyleSheet, Text, View} from "react-native";
+
+import {TouchableHighlight, FlatList, StyleSheet, Text, View, SearchBar,TextInput} from "react-native";
+
 import moment from "moment";
 import Colors from "../../constants/Colors";
 import { useIsFocused } from "@react-navigation/native";
@@ -38,151 +40,22 @@ export default function Books({ route, navigation }) {
   const [isAsc, setIsAsc] = useState(true);
   var order = "author";
   var direction = "desc";
-  //var refresh = true;
-  function changeOrder(orderby) {
-       // var x = 0
-      //while ( x < 5) {
-      if(orderby === "author"){
-        if(isauthor) {
-            setIsAsc(!isAsc);
-            setIsauthor(true);
 
-            console.log("swapped dir")
-        } else {
-            setIsauthor(true);
-            console.log("swapped type to author")
-        }
-        if(isAsc) {
-        setRefresh(!refresh)
-           setPosts(posts.sort((a, b) => a.author.localeCompare(b.author)))
-           setRefresh(!refresh)
-          }
-          else {
-          setRefresh(!refresh)
-            setPosts(posts.sort((a, b) => !a.author.localeCompare(b.author)))
-            setRefresh(!refresh)
-          }
-      }
-      else if(orderby === "bookTitle") {
-        if(!isauthor) {
-             setIsauthor(false);
-             setIsAsc(!isAsc);
-
-             console.log("swapped type to title")
-                
-        } else {
-           setIsauthor(false);
-           console.log("swapped dir")
-
-        }
-        if(isAsc) {
-            setRefresh(!refresh)
-           setPosts(posts.sort((a, b) => a.title.localeCompare(b.title)))
-           setRefresh(!refresh)
-          }
-          else {
-            setRefresh(!refresh)
-            setPosts(posts.sort((a, b) => !a.title.localeCompare(b.title)))
-            setRefresh(!refresh)
-          }
-      }
-      
-      //x++
-      /*if(isauthor) {
-          if(isAsc) {
-           setPosts(posts.sort((a, b) => a.author.localeCompare(b.author)))
-          }
-          else {
-            setPosts(posts.sort((a, b) => !a.author.localeCompare(b.author)))
-          }
-      }
-      else {
-        if(isAsc) {
-           setPosts(posts.sort((a, b) => a.title.localeCompare(b.title)))
-          }
-          else {
-            setPosts(posts.sort((a, b) => !a.title.localeCompare(b.title)))
-          }
-      }*/
-      
-      setRefresh(!refresh)
-
-      //}
-      
-      /* console.log(order == orderby);
-       console.log(order === orderby);
-       if(order === orderby) {
-           direction = (direction === "desc") ? "asc" : "desc";
-           console.log(order)
-           console.log(orderby)
-           
-           console.log(direction)
-       
-           //unsubscribe(order, direction);
-       } else {
-        order = orderby
-        console.log(order)
-        console.log(orderby)
-        console.log(direction)
-        //unsubscribe(order, direction);
-       }
-       //posts.orderBy(order, direction)
-      
-       if(order === "author") {
-           if(direction === "asc") {
-           console.log(direction)
-           setPosts(posts.sort((a, b) => a.author.localeCompare(b.author)))
-           } else {
-           console.log(direction)
-           console.log("else")
-
-
-           setPosts(posts.sort((a, b) => !a.author.localeCompare(b.author)))
-           }
-       } else {
-        console.log("order else")
-           if(direction === "asc") {
-           console.log(direction)
-               setPosts(posts.sort((a, b) => a.title.localeCompare(b.title)))
-           } else {
-           console.log(direction)
-               setPosts(posts.sort((a, b) => !a.title.localeCompare(b.title)))
-                console.log("else")
-               }
-       }*/
-  
-   
-   //console.log(posts)
-      /*if() {
-        order = orderby;
-        console.log(order)
-        unsubscribe(order, direction)
-      } else {
-        console.log(direction)
-          if (direction == "desc") {
-              direction = "asc";
-          } else {
-              direction = "desc";
-          }
-          unsubscribe(order, direction);
-      }*/
-  }
-  
-  
   const [posts, setPosts] = useState(() => unsubscribe("bookTitle", "asc"));
-  this.state = {
-      searchText: "",
-      data: posts,
-      filteredData: []
-      };
-  search = (searchText) => {
-  this.setState({searchText: searchText});
-
-  let filteredData = this.state.data.filter(function (item) {
-    return (item.title.includes(searchText)||item.author.includes(searchText)||item.content.includes(searchText));
+  
+   var searchtext= "";
+   // var   data= posts;
+  const [filteredData, setFilteredData] = useState([]);
+  //search = (searchText) => {
+  function search(searchText) {
+  searchtext = searchText
+  let filtereddata = posts.filter(function (item) {
+    
+    return (item.title.toLowerCase().includes(searchText.toLowerCase())||item.author.toLowerCase().includes(searchText.toLowerCase())||item.content.toLowerCase().includes(searchText.toLowerCase()));
   });
+  setFilteredData(filtereddata);
+  setRefresh(!refresh);
 
-  this.setState({filteredData: filteredData});
 };
   const _listEmptyComponent = () => {
     return (
@@ -198,67 +71,23 @@ export default function Books({ route, navigation }) {
   };
 
     
-  
-    //console.log(posts);
-    //console.log(posts2);
+
   return (
     <View style={styles.container}>
-        <Searchbar
-        placeholder="Search"
-        onChangeText={onChangeSearch}
-        value={searchQuery}/>
+         
       <View>
         <Text style={styles.topicTitle}>Books</Text>
-        <SearchBar
-          round={true}
-          lightTheme={true}
+        <TextInput
           placeholder="Search..."
-          autoCapitalize='none'
+          style={styles.titleInput}
+          placeholderTextColor={Colors.gray}
           autoCorrect={false}
-          onChangeText={this.search}
-          value={this.state.searchText}
+          autoCapitalize="none"
+          
+          onChangeText={(val) => search(val)}
+          maxLength={300}
         />
-        <View style = {styles.buttons}>
-        <Button
-          containerStyle={{
-            padding: 10,
-            height: 45,
-            margin: 20,
-            overflow: "hidden",
-            borderRadius: 20,
-            backgroundColor: Colors.primary,
-          }}
-          disabledContainerStyle={{ backgroundColor: "grey" }}
-          style={{
-            
-            color: "white",
-            fontSize: 20,
-            fontWeight: "bold",
-          }}
-          onPress={() => changeOrder("bookTitle")}
-        >
-          order by title
-        </Button>
-        <Button
-          containerStyle={{
-            padding: 10,
-            height: 45,
-            overflow: "hidden",
-            borderRadius: 20,
-            margin:20,
-            backgroundColor: Colors.primary,
-          }}
-          disabledContainerStyle={{ backgroundColor: "grey" }}
-          style={{
-            color: "white",
-            fontSize: 20,
-            fontWeight: "bold",
-          }}
-          onPress={() => changeOrder("author")}
-        >
-          order by author
-        </Button>
-        </View>
+
       </View>
       <FlatList
         extraData={refresh}
@@ -266,15 +95,14 @@ export default function Books({ route, navigation }) {
         ListEmptyComponent={_listEmptyComponent}
         contentContainerStyle={{ flexGrow: 1 }}
         style={{ flex: 1 }}
-        //data = {posts}
-        data={this.state.filteredData && this.state.filteredData.length > 0 ? this.state.filteredData : this.state.data}
+
+
+        data={(filteredData && filteredData.length > 0) ? filteredData : posts}
+
         renderItem={({ item }) => (
           <TouchableHighlight
             style={styles.item}
-            onPress={() => navigation.navigate('ReadBook', {content: item.content, date : item.date, title: item.title, author : item.author})}/*{
-
-              
-            }}*/
+            onPress={() => navigation.navigate('ReadBook', {content: item.content, date : item.date, title: item.title, author : item.author})}
           >
             <View>
               <BookComponent
